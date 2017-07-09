@@ -26,11 +26,16 @@ set foldlevelstart=20   " Do not fold by default
 set scrolloff=3         " How far away from the edge the cursor initiates scrolling
 set tildeop             " Tilde is an operator
 set formatprg=par\ -w80 " Format paragraphs using par
-set wig+=checkouts/**   " Completion/search blacklist
-set wig+='
-set wig+=tmp/**,*node_modules/**,*dist/**,public/**
-set wig+=*ext/**
-set wig+=*.pyc
+
+" Shouldn't need this anymore with NERDTree Plugin:
+" https://github.com/albfan/nerdtree-git-plugin
+" set wig+=checkouts/**   " Completion/search blacklist
+" set wig+='
+" set wig+=tmp/**,*node_modules/**,*dist/**,public/**
+" set wig+=*ext/**
+" set wig+=*.pyc
+" set wig+=**/*.pyc
+
 set autoread
 set autowriteall        " Save when focus is lost
 set statusline=

@@ -12,6 +12,7 @@ Plug 'herrbischoff/cobalt2.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'EvanDotPro/nerdtree-chmod', { 'on': 'NERDTreeToggle' }
+Plug 'albfan/nerdtree-git-plugin'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
