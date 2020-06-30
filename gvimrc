@@ -68,10 +68,9 @@ elseif has("gui_macvim")
 end
 
 " Best choices: solarized, toychest, github, flatui, monokai, cobalt2
-" colorscheme solarized
+colorscheme github
 " set background=light
 
-colorscheme github
 
 " Don't show tildes
 " hi NonText guifg=bg

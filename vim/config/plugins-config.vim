@@ -49,4 +49,54 @@ let g:gist_post_private = 1
 let g:sqlutil_align_comma = 1
 let g:sqlutil_align_first_word = 1
 
-autocmd FileType html,css,javascript.jsx EmmetInstall
+" How many lines the parser scans for matching delimiters 
+let g:clojure_maxlines = 150
+
+" Align strings the pretty way
+let g:clojure_align_multiline_strings = 1
+
+" Indentation configuration
+let g:clojure_fuzzy_indent_patterns = [
+      \ '^do',
+      \ '^with',
+      \ '^def',
+      \ '^or',
+      \ '^and',
+      \ '^let',
+      \ '^select',
+      \ '^insert',
+      \ '^create',
+      \ '^update',
+      \ '^delete',
+      \ '^before',
+      \ '^before-all',
+      \ '^after',
+      \ '^after-all',
+      \ '^around',
+      \ '^describe',
+      \ '^it',
+      \ '^ANY',
+      \ '^GET',
+      \ '^POST',
+      \ '^PUT',
+      \ '^PATCH',
+      \ '^DELETE',
+      \ '^OPTIONS',
+      \ '^table',
+      \ '^drop',
+      \ '^fact',
+      \ '^->',
+      \ '^dom',
+      \ '^did',
+      \ '^will',
+      \ '^render'
+      \ ]
+
+augroup emmet_group
+  autocmd FileType html,css,javascript.jsx EmmetInstall
+augroup END
+
+augroup rainbow_parens
+  autocmd!
+  autocmd VimEnter *.clj RainbowParentheses
+augroup END

@@ -52,7 +52,8 @@ Plug 'udalov/kotlin-vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'vim-scripts/SQLUtilities' | Plug 'vim-scripts/Align'
@@ -68,6 +69,5 @@ Plug 'rust-lang/rust.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
-Plug 'amininger/vim-soar-plugin'
 
 call plug#end()

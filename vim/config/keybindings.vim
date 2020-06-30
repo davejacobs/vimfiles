@@ -55,7 +55,6 @@ nmap <Leader>fs :%SQLUFormatter<CR>
 nmap <D-B>      :Gbrowse<CR>
 vmap <D-B>      :Gbrowse<CR>
 
-
 " Generic tag creator
 nmap <Silent> <Leader>t !ctags -R --exclude=.git --exclude=log ./*<CR>
 
