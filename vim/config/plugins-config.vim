@@ -22,14 +22,16 @@ let g:NERDTreeIgnore = [
       \ '^log$',
       \ '^logs$',
       \ '^__pycache__$',
-      \ '*\.pyc$'
+      \ '*\.pyc$',
+      \ '**/*\.pyc$',
+      \ 'Icon*'
       \ ]
 
 " Actively correct Javascript, do not actively correct HTML
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'active_filetypes': ['javascript'],
-      \ 'passive_filetypes': ['html', 'sass', 'scss', 'scss.css', 'python'] 
+      \ 'passive_filetypes': ['html', 'sass', 'scss', 'scss.css', 'python', 'java'] 
       \ }
 
 let g:syntastic_javascript_checkers = ['eslint']
@@ -37,6 +39,7 @@ let g:jsx_ext_required = 0
 let g:pymode_lint = 0
 
 " call tcomment#DefineType('js', '// %s')
+call tcomment#DefineType('soar', '# %s')
 
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1

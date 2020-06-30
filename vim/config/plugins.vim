@@ -3,7 +3,8 @@
 call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'daylerees/colour-schemes', { 'rtp': 'vim/' }
+" Plug 'daylerees/colour-schemes', { 'rtp': 'vim/' }
+Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'imsizon/wombat.vim'
 Plug 'herrbischoff/cobalt2.vim'
@@ -12,7 +13,7 @@ Plug 'herrbischoff/cobalt2.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'EvanDotPro/nerdtree-chmod', { 'on': 'NERDTreeToggle' }
-Plug 'albfan/nerdtree-git-plugin'
+" Plug 'albfan/nerdtree-git-plugin'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
@@ -47,6 +48,7 @@ Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 " Languages and frameworks
 Plug 'vim-ruby/vim-ruby', { 'branch': 'master' }
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'udalov/kotlin-vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
@@ -63,5 +65,9 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-haml'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+Plug 'amininger/vim-soar-plugin'
 
 call plug#end()

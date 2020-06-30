@@ -59,10 +59,11 @@ vmap <D-B>      :Gbrowse<CR>
 " Generic tag creator
 nmap <Silent> <Leader>t !ctags -R --exclude=.git --exclude=log ./*<CR>
 
-map <C-N>         :CtrlPMixed<CR>
-map <Leader>N     :CtrlPMixed<CR>
+map <C-N>         :CtrlP<CR>
+map <Leader>N     :CtrlP<CR>
 map <Leader>e     :CtrlPBuffer<CR>
 map <Leader>n     :NERDTreeToggle<CR>
 map <Leader>/     :TComment<CR>
 
 map <C-e>         :Eval<CR>
+map <Leader>ee    ggVG:Eval<CR>

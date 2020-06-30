@@ -13,7 +13,7 @@ set autoindent
 set shiftwidth=2        " Width of autoindent
 set nosmartindent       " Causes problems, esp. with reindenting hashes
 set smarttab            " Use shiftwidth to tab at line beginning
-set wrap                " Wrap text inside screen
+set nowrap              " Don't wrap text inside screen
 set linebreak           " Wrap words, not characters
 set linespace=4         " Baseline spacing, measured in pixels
 set number              " Show line numbers
@@ -27,8 +27,7 @@ set scrolloff=3         " How far away from the edge the cursor initiates scroll
 set tildeop             " Tilde is an operator
 set formatprg=par\ -w80 " Format paragraphs using par
 
-" Shouldn't need this anymore with NERDTree Plugin:
-" https://github.com/albfan/nerdtree-git-plugin
+" Shouldn't need this anymore with NERDTreeIgnore.
 " set wig+=checkouts/**   " Completion/search blacklist
 " set wig+='
 " set wig+=tmp/**,*node_modules/**,*dist/**,public/**

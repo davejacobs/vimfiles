@@ -11,7 +11,7 @@ set guioptions-=l       " Remove left scrollbar
 set guioptions-=r       " Remove right scrollbar
 set guioptions-=b       " Remove bottom scrollbar
 set visualbell t_vb=    " Get rid of that annoying error beep & flash
-set linespace=4
+set linespace=6
 
 autocmd BufEnter * highlight Search gui=underline
 
@@ -36,6 +36,7 @@ elseif has("gui_macvim")
 
   " Delete MacVim key bindings before reusing
   macmenu &Edit.Find.Find\.\.\. key = <nop>
+  macmenu &Edit.Find.Use\ Selection\ for\ Find key = <nop>
   macmenu &File.Print key = <nop>
   macmenu &File.Save\ As\.\.\. key = <nop>
 
@@ -54,6 +55,7 @@ elseif has("gui_macvim")
   " Access CtrlP, NERDTree, NERDCommenter
   map <D-N>           :CtrlPMixed<CR>
   map <D-e>           :Eval<CR>
+  map <D-E>           :%Eval<CR>
   map <D-g>           :Gstatus<CR>
   map <D-n>           :NERDTreeToggle<CR>
   map <D-/>           :TComment<CR>
@@ -66,8 +68,10 @@ elseif has("gui_macvim")
 end
 
 " Best choices: solarized, toychest, github, flatui, monokai, cobalt2
-colorscheme solarized
-set background=light
+" colorscheme solarized
+" set background=light
+
+colorscheme github
 
 " Don't show tildes
-hi NonText guifg=bg
+" hi NonText guifg=bg
