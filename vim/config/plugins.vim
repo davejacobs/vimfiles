@@ -19,9 +19,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " Git
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 if v:version >= 703
-  Plug 'mhinz/vim-signify'
+  " Plug 'mhinz/vim-signify'
 endif
 
 " General editing
@@ -34,6 +34,7 @@ Plug 'henrik/vim-qargs'
 " Writing
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
+Plug 'reedes/vim-pencil'
 
 " Code editing
 Plug 'majutsushi/tagbar'
@@ -52,7 +53,6 @@ Plug 'udalov/kotlin-vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
-" Plug 'kien/rainbow_parentheses.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'

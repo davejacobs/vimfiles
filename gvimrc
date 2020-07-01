@@ -3,15 +3,27 @@
 set guioptions=         " Reset options
 set guioptions+=i       " Show Vim icon in taskbar
 set guioptions+=e       " Show native GUI tabs
-set guioptions-=a       " Remove autoselect
-set guioptions-=A       " Remove autoselect
+set guioptions-=a       " Remove autoselect, which automatically copies selected text into memory
+set guioptions-=A       " Remove autoselect, which automatically copies selected text into memory
 set guioptions-=m       " Remove menu bar
 set guioptions-=T       " Remove toolbar
 set guioptions-=l       " Remove left scrollbar
 set guioptions-=r       " Remove right scrollbar
 set guioptions-=b       " Remove bottom scrollbar
+
 set visualbell t_vb=    " Get rid of that annoying error beep & flash
+
 set linespace=6
+set transparency=10
+set blur=5
+
+" Best choices: solarized, toychest, github, flatui, monokai, cobalt2,
+" PaperColor
+" colorscheme github
+colorscheme PaperColor
+
+" Don't show tildes
+" hi NonText guifg=bg
 
 autocmd BufEnter * highlight Search gui=underline
 
@@ -66,11 +78,3 @@ elseif has("gui_macvim")
   " Copy current file path to system pasteboard
   nmap <D-C>          :call CopyPathWithLine()<CR>
 end
-
-" Best choices: solarized, toychest, github, flatui, monokai, cobalt2
-colorscheme github
-" set background=light
-
-
-" Don't show tildes
-" hi NonText guifg=bg

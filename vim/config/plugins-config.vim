@@ -92,11 +92,20 @@ let g:clojure_fuzzy_indent_patterns = [
       \ '^render'
       \ ]
 
+let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#autoformat = 1
+let g:pencil#textwidth = 100
+
 augroup emmet_group
   autocmd FileType html,css,javascript.jsx EmmetInstall
 augroup END
 
-augroup rainbow_parens
+augroup rainbow_lisp
   autocmd!
-  autocmd VimEnter *.clj RainbowParentheses
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,md,mkd call pencil#init()
 augroup END
