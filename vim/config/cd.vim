@@ -1,9 +1,9 @@
 " Cd.vim - Where to go on startup
 
 if getcwd() == expand('~')
-  if isdirectory(expand('~/Projects'))
-    cd ~/Projects
-  elseif isdirectory(expand('~/projects'))
-    cd ~/projects
+  if isdirectory(expand('~/Code'))
+    cd ~/Code
+  elseif isdirectory(expand('~/code'))
+    cd ~/code
   endif
 endif
