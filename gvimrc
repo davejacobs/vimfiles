@@ -22,4 +22,18 @@ set linespace=6
 " Don't show tildes
 hi NonText guifg=bg
 
+if has("gui_gtk2")
+  set guifont=Ubuntu\ Mono\ 11
+elseif has("gui_macvim")
+  set guifont=Monaco:h13
+
+  " Delete MacVim key bindings before reusing
+  " macmenu &Edit.Find.Find\.\.\. key = <nop>
+  macmenu &Edit.Find.Find… key = <nop>
+  
+  macmenu &Edit.Find.Use\ Selection\ for\ Find key = <nop>
+  macmenu &File.Print key = <nop>
+  macmenu &File.Save\ As… key = <nop>
+endif
+
 autocmd BufEnter * highlight Search gui=underline

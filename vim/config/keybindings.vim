@@ -59,6 +59,7 @@ vmap <D-B>      :Gbrowse<CR>
 nmap <Silent> <Leader>t !ctags -R --exclude=.git --exclude=log ./*<CR>
 
 map <C-N>         :CtrlP<CR>
+map <C-f>         :Ag! ""<Left>
 map <Leader>N     :CtrlP<CR>
 map <Leader>e     :CtrlPBuffer<CR>
 map <Leader>n     :NERDTreeToggle<CR>
@@ -79,19 +80,8 @@ nmap <Leader>cp         :edit ~/.vim/config/plugins-config.vim<CR>
 
 vmap <C-c>          "+y
 
-if has("gui_gtk2")
-  set guifont=Ubuntu\ Mono\ 11
-  map <C-f>           :Ag! ""<Left>
-elseif has("gui_macvim")
-  set guifont=Monaco:h13
-
-  " Delete MacVim key bindings before reusing
-  " macmenu &Edit.Find.Find\.\.\. key = <nop>
-  macmenu &Edit.Find.Find… key = <nop>
-  
-  macmenu &Edit.Find.Use\ Selection\ for\ Find key = <nop>
-  macmenu &File.Print key = <nop>
-  macmenu &File.Save\ As… key = <nop>
+if has("gui_macvim")
+  map <D-f>           :Ag! ""<Left>
 
   " Conveniently access config files
   nmap <D-O>          :source %<CR>
@@ -102,8 +92,6 @@ elseif has("gui_macvim")
   nmap <D->>pc        :edit ~/.vim/config/plugins-config.vim<CR>
   nmap <D->>f         :edit ~/.vim/config/functions.vim<CR>
   nmap <D->>k         :edit ~/.vim/config/keybindings.vim<CR>
-
-  map <D-f>           :Ag! ""<Left>
 
   " Access CtrlP, NERDTree, NERDCommenter
   map <D-N>           :CtrlPMixed<CR>
