@@ -3,7 +3,7 @@
 
 set nocompatible
 filetype off
-runtime! config/plugins.vim
+runtime! plugins.vim
 filetype plugin indent on
 syntax on
 

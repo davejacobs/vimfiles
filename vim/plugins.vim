@@ -4,8 +4,10 @@ call plug#begin('~/.vim/plugged')
 
 " Themes
 Plug 'flazz/vim-colorschemes'
-Plug 'imsizon/wombat.vim'
-Plug 'herrbischoff/cobalt2.vim'
+" Plug 'imsizon/wombat.vim'
+" Plug 'herrbischoff/cobalt2.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'nordtheme/vim'
 
 " Navigation
 Plug 'ctrlpvim/ctrlp.vim'
