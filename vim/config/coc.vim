@@ -99,8 +99,8 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" Do not suggest words while editing text files
 autocmd FileType markdown let b:coc_suggest_disable = 1
-" autocmd FileType markdown call CocDisable()
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
