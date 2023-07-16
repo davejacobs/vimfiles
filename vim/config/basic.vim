@@ -1,6 +1,6 @@
 " Basic.vim - Basic Vim options, with thorough comments
 
-colorscheme gravity
+colorscheme nord
 
 " Filesystem and buffers functionality
 set autowriteall        " Save when focus is lost
