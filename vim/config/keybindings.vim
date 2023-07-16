@@ -38,8 +38,11 @@ map <Leader>C   :call CopyPathWithLine()<CR>
 " Edit filetype-specific file
 map <Leader>h   :execute "edit " . FiletypeFile()<CR>
 
-autocmd BufWritePre *.js,*.rb,*.py,*.scss,*.md 
-      \ call StripTrailingWhitespace()
+augroup strip_whitespace
+  autocmd!
+  autocmd BufWritePre *.js,*.rb,*.py,*.scss,*.md 
+        \ call StripTrailingWhitespace()
+augroup end
 
 " Fast search
 map <Leader>a :Ag! ""<Left>

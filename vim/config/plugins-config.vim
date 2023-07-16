@@ -52,3 +52,8 @@ let g:bullets_enabled_file_types = [
     \ 'gitcommit',
     \ 'scratch'
     \]
+
+" augroup markdown
+"   autocmd!
+"   autocmd FileType markdown :Goyo
+" augroup end
