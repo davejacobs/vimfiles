@@ -15,6 +15,7 @@ let g:NERDSpaceDelims=1               " Add a space before comments
 let g:NERDTreeChDirMode=2             " Change working directory 
                                       " when appropriate
 let g:NERDTreeIgnore = [
+      \ '^.gems$',
       \ '^tags$',
       \ '^target$',
       \ '^node_modules$',
