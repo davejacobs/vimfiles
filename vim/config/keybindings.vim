@@ -48,9 +48,7 @@ augroup end
 map <Leader>a :Ag! ""<Left>
 
 " WriteRoom
-nnoremap <silent> <leader>z :Goyo<cr>
-
-nmap <Leader>fs :%SQLUFormatter<CR>
+nnoremap <silent> <leader>z :Goyo<CR>
 
 " GitHub integration
 nmap <D-B>      :Gbrowse<CR>
