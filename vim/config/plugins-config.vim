@@ -28,6 +28,9 @@ let g:NERDTreeIgnore = [
       \ 'Icon*'
       \ ]
 
+" Make NERDTree cursor line bold rather than underlining (in Neovim)
+highlight CursorLine term=bold cterm=bold ctermbg=none  ctermfg=none gui=bold
+
 " Actively correct Javascript, do not actively correct HTML
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
