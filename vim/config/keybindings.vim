@@ -27,9 +27,9 @@ map <C-h>       <C-w>h
 map <C-l>       <C-w>l
 
 map <Leader>y   :nohls<CR>
-vmap <Leader>p  :!par<CR>
-nmap <Leader>p  vip!par<CR>
-nmap <Leader>P  ggVG!par<CR>
+vmap <Leader>p  :!par -w 100 <CR>
+nmap <Leader>p  vip!par -w 100<CR>
+nmap <Leader>P  ggVG!par -w 100<CR>
 map Y           y$
 
 " Copy current file path to system pasteboard
