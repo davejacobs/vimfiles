@@ -1,10 +1,10 @@
 # Vimfiles
 
-Vim config in the cloud
+Vim/Neovim config in the cloud
 
 ## Install
 
-Assuming you have `curl` and `vim` installed:
+Assuming you have `git` and `curl` installed:
 
     git clone https://github.com/davejacobs/vimfiles.git
     cd vimfiles
