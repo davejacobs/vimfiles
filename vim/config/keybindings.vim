@@ -41,8 +41,6 @@ map <Leader>h   :execute "edit " . FiletypeFile()<CR>
 autocmd BufWritePre *.js,*.rb,*.py,*.scss,*.md 
       \ call StripTrailingWhitespace()
 
-" Plugins
-
 " Fast search
 map <Leader>a :Ag! ""<Left>
 
