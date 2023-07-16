@@ -35,8 +35,11 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 
 " Writing
+Plug 'godlygeek/tabular'          " Required for vim-markdown
+Plug 'preservim/vim-markdown'     " Does not work with bullets
 Plug 'junegunn/goyo.vim'
-Plug 'dkarter/bullets.vim'
+" Plug 'dkarter/bullets.vim'      " This is not working well, its textwidth requirement
+                                  " doesn't play nicely with goyo or vim-markdown.
 
 " General code editing
 Plug 'majutsushi/tagbar'
