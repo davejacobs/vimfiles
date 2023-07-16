@@ -12,4 +12,3 @@ runtime! config/coc.vim
 runtime! config/functions.vim
 runtime! config/keybindings.vim
 runtime! config/plugins-config.vim
-runtime! config/cd.vim
