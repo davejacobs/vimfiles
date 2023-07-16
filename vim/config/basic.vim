@@ -25,20 +25,21 @@ set foldmethod=indent   " Fold using indentation
 set foldlevelstart=20   " Do not fold by default
 set scrolloff=3         " How far away from the edge the cursor initiates scrolling
 set tildeop             " Tilde is an operator
-" set formatprg=par\ -w80 " Format paragraphs using par
+set noshowmode          " Do not show current mode (e.g., --INSERT MODE--)
+" set textwidth=80        " Consider setting this only for Markdown and text files
 
-" Shouldn't need this anymore with NERDTreeIgnore.
-" set wig+=checkouts/**   " Completion/search blacklist
-" set wig+='
-" set wig+=tmp/**,*node_modules/**,*dist/**,public/**
-" set wig+=*ext/**
-" set wig+=*.pyc
-" set wig+=**/*.pyc
-
+set autochdir           " Automatically change directory; useful for vim <directory> and
+                        " then exploring in NERDTree
 set autoread
 set autowriteall        " Save when focus is lost
 set statusline=
 set clipboard=unnamed
+
+" set cursorline          " Enable cursorline feature, specifically so that I can make
+                        " current line bold
+highlight CursorLine term=bold cterm=bold ctermbg=none  ctermfg=none gui=bold
+
+let mapleader = " "
 
 if has('unix') || has('mac')
   set directory=/tmp    " Don't store swap files by the originals!

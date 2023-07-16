@@ -14,8 +14,8 @@ set guioptions-=b       " Remove bottom scrollbar
 set visualbell t_vb=    " Get rid of that annoying error beep & flash
 
 set linespace=6
-set transparency=10
-set blur=5
+" set transparency=5
+" set blur=10
 
 " Best choices: solarized, toychest, github, flatui, monokai, cobalt2,
 " PaperColor
@@ -23,7 +23,7 @@ set blur=5
 colorscheme PaperColor
 
 " Don't show tildes
-" hi NonText guifg=bg
+hi NonText guifg=bg
 
 autocmd BufEnter * highlight Search gui=underline
 
@@ -47,10 +47,12 @@ elseif has("gui_macvim")
   set guifont=Monaco:h13
 
   " Delete MacVim key bindings before reusing
-  macmenu &Edit.Find.Find\.\.\. key = <nop>
+  " macmenu &Edit.Find.Find\.\.\. key = <nop>
+  macmenu &Edit.Find.Find… key = <nop>
+  
   macmenu &Edit.Find.Use\ Selection\ for\ Find key = <nop>
   macmenu &File.Print key = <nop>
-  macmenu &File.Save\ As\.\.\. key = <nop>
+  macmenu &File.Save\ As… key = <nop>
 
   " Conveniently access config files
   nmap <D-O>          :source %<CR>
