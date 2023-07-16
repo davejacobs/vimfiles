@@ -41,15 +41,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:jsx_ext_required = 0
 let g:pymode_lint = 0
 
+let g:goyo_width = 100
+let g:goyo_height = '90%'
+
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
-
-" bullets isn't cooperating
-" let g:bullets_enabled_file_types = [
-"     \ 'markdown',
-"     \ 'text',
-"     \ 'gitcommit',
-"     \ 'scratch'
-"     \]
