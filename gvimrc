@@ -1,5 +1,9 @@
 " .gvimrc - GUI customization for GVim and MacVim
 
+" Best choices: solarized, toychest, github, flatui, monokai, cobalt2, PaperColor, gravity
+" colorscheme github
+" colorscheme PaperColor
+
 set guioptions=         " Reset options
 set guioptions+=i       " Show Vim icon in taskbar
 set guioptions+=e       " Show native GUI tabs
