@@ -36,6 +36,7 @@ if has("gui_gtk2")
   nmap <Leader>cv         :edit $MYVIMRC<CR>
   nmap <Leader>cg         :edit $MYGVIMRC<CR>
   nmap <Leader>ca         :edit ~/.vim/config/basic.vim<CR>
+  nmap <Leader>cc         :edit ~/.vim/config/coc.vim<CR>
   nmap <Leader>cb         :edit ~/.vim/config/plugins.vim<CR>
   nmap <Leader>cf         :edit ~/.vim/config/functions.vim<CR>
   nmap <Leader>ck         :edit ~/.vim/config/keybindings.vim<CR>
