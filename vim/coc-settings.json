@@ -1,7 +1,7 @@
 {
   "languageserver": {
     "haskell": {
-      "command": "haskell-language-server-wrapper",
+      "command": "haskell-language-server-wrapper-1.9.1.0",
       "args": ["--lsp"],
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
       "filetypes": ["haskell", "lhaskell"],
