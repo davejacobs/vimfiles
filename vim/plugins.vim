@@ -55,6 +55,7 @@ Plug 'vim-ruby/vim-ruby', { 'branch': 'master' }
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'NoahTheDuke/vim-just'
 
 " Network
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
