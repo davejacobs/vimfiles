@@ -49,6 +49,12 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:jsx_ext_required = 0
 let g:pymode_lint = 0
 
+" Highlight YAML frontmatter properly
+let g:vim_markdown_frontmatter = 1
+
+" Highlight strikethroughs
+let g:vim_markdown_strikethrough = 1
+
 let g:goyo_width = 100
 let g:goyo_height = '90%'
 

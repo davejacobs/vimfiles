@@ -1,4 +1,6 @@
 setlocal spell spelllang=en_us " Spell check
+setlocal spellcapcheck=        " Turn off capitalization checking, it doesn't work
+                               " in many cases, like after "vs." 
 setlocal nosmartindent
 setlocal cinoptions=           " Turn off programmer indentation
 setlocal nonumber

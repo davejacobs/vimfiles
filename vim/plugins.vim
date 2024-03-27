@@ -37,6 +37,7 @@ Plug 'mileszs/ack.vim'
 " Writing
 Plug 'godlygeek/tabular'          " Required for vim-markdown
 Plug 'preservim/vim-markdown'     " Does not work with bullets
+Plug 'vim-latex/vim-latex'
 Plug 'junegunn/goyo.vim'
 
 " General code editing
