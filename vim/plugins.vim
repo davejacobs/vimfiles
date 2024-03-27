@@ -40,6 +40,9 @@ Plug 'preservim/vim-markdown'     " Does not work with bullets
 Plug 'vim-latex/vim-latex'
 Plug 'junegunn/goyo.vim'
 
+" Accounting
+Plug 'ledger/vim-ledger'
+
 " General code editing
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
