@@ -21,10 +21,18 @@ cmap w!! %!sudo tee > /dev/null %
 " Easy splits, navigation, search, buffers & tabs
 map <Leader>s  :split<CR>
 map <Leader>v  :vsplit<CR>
-map <C-j>       <C-w>j
-map <C-k>       <C-w>k
-map <C-h>       <C-w>h
-map <C-l>       <C-w>l
+inoremap <C-j>       <C-w>j
+nnoremap <C-j>       <C-w>j
+vnoremap <C-j>       <C-w>j
+inoremap <C-k>       <C-w>k
+nnoremap <C-k>       <C-w>k
+vnoremap <C-k>       <C-w>k
+inoremap <C-h>       <C-w>h
+nnoremap <C-h>       <C-w>h
+vnoremap <C-h>       <C-w>h
+inoremap <C-l>       <C-w>l
+nnoremap <C-l>       <C-w>l
+vnoremap <C-l>       <C-w>l
 
 map <Leader>y   :nohls<CR>
 vmap <Leader>p  :!par -w 100 <CR>
