@@ -38,6 +38,9 @@ set incsearch           " Incremental search
 set ignorecase          " Ignore search case
 set smartcase           " ... unless uppercase letters are explicit
 
+" Navigation functionality
+set wildignore+=.DS_Store  " This applies to Ctrl-P navigation
+
 " Project functionality
 set exrc                " Per-directory .vimrc 
 set secure              " Required for exrc
