@@ -1,13 +1,5 @@
 " Plugins.vim - Configuration for all plugins
 
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_user_command = {
-      \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-      \ },
-      \ 'fallback': 'find %s -type f'
-      \ }
-
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=20
 let g:NERDTreeDirArrows=1
@@ -26,6 +18,14 @@ let g:NERDTreeIgnore = [
       \ '**/*\.pyc$',
       \ 'Icon*'
       \ ]
+
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_user_command = {
+      \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+      \ },
+      \ 'fallback': 'find %s -type f'
+      \ }
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
