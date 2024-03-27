@@ -27,6 +27,10 @@ let g:NERDTreeIgnore = [
       \ 'Icon*'
       \ ]
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Make NERDTree cursor line bold rather than underlining (in Neovim)
 highlight CursorLine term=bold cterm=bold ctermbg=none  ctermfg=none gui=bold
 

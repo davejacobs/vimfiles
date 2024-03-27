@@ -45,7 +45,7 @@ augroup strip_whitespace
 augroup end
 
 " Fast search
-map <Leader>a :Ag! ""<Left>
+map <Leader>f :Ack! ""<Left>
 
 " WriteRoom
 nnoremap <silent> <leader>z :Goyo<CR>
@@ -58,7 +58,7 @@ vmap <D-B>      :Gbrowse<CR>
 nmap <Silent> <Leader>t !ctags -R --exclude=.git --exclude=log ./*<CR>
 
 map <C-N>         :CtrlP<CR>
-map <C-f>         :Ag! ""<Left>
+map <C-f>         :Ack! ""<Left>
 map <Leader>N     :CtrlP<CR>
 map <Leader>e     :CtrlPBuffer<CR>
 map <Leader>n     :NERDTreeToggle<CR>
@@ -80,7 +80,7 @@ nmap <Leader>cp         :edit ~/.vim/config/plugins-config.vim<CR>
 vmap <C-c>          "+y
 
 if has("gui_macvim")
-  map <D-f>           :Ag! ""<Left>
+  map <D-f>           :Ack! ""<Left>
 
   " Conveniently access config files
   nmap <D-O>          :source %<CR>

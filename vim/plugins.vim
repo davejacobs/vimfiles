@@ -32,7 +32,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-dispatch'
 Plug 'henrik/vim-qargs'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'mileszs/ack.vim'
 
 " Writing
 Plug 'godlygeek/tabular'          " Required for vim-markdown
