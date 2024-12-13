@@ -8,7 +8,6 @@ filetype plugin indent on
 syntax on
 
 runtime! config/basic.vim
-runtime! config/coc.vim
 runtime! config/functions.vim
 runtime! config/keybindings.vim
 runtime! config/plugins-config.vim

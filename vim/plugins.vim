@@ -23,7 +23,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 
 " Language server
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 " General editing
 Plug 'tpope/vim-abolish'

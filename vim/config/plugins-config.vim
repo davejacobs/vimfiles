@@ -23,13 +23,15 @@ let g:NERDTreeIgnore = [
 autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-let g:ctrlp_working_path_mode=0
+" let g:ctrlp_working_path_mode=0
 let g:ctrlp_user_command = {
       \ 'types': {
         \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
       \ },
       \ 'fallback': 'find %s -type f'
       \ }
+
+let g:ctrlp_working_path_mode = 'r'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -62,3 +64,15 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
+
+if has('nvim')
+  lua << EOF
+    require('mason').setup()
+    require('mason-lspconfig').setup()
+    require('lspconfig')['hls'].setup{
+      filetypes = { 'haskell', 'lhaskell', 'cabal' },
+    }
+    require'lspconfig'.hls.setup{}
+EOF
+endif
+
