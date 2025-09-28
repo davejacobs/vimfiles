@@ -5,12 +5,6 @@ call plug#begin('~/.vim/plugged')
 " Current theme
 Plug 'nordtheme/vim'
 
-" Past themes
-" Plug 'flazz/vim-colorschemes'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'imsizon/wombat.vim'
-" Plug 'herrbischoff/cobalt2.vim'
-
 " Navigation
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -53,9 +47,9 @@ Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/matchit.zip'
 
 " Language-specific editing
+Plug 'neovimhaskell/haskell-vim'
 Plug 'vim-ruby/vim-ruby', { 'branch': 'master' }
 Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'NoahTheDuke/vim-just'
 
