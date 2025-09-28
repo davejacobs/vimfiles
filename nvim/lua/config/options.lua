@@ -43,6 +43,9 @@ vim.opt.secure = true -- Required for exrc
 -- Navigation
 vim.opt.autochdir = true -- Automatically change directory
 
+-- Mouse support
+vim.opt.mouse = 'a'  -- Enable mouse in all modes
+
 -- Neovim-specific improvements
 vim.opt.fillchars = { eob = ' ' } -- Remove tildes from blank lines
 -- vim.opt.cmdheight = 0          -- Minimal command line (uncomment if desired)
