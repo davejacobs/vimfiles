@@ -52,8 +52,14 @@ interactively_call() {
 pushd $directory > /dev/null
   files=$(ls | grep -v -e "^bin" -e "README.md" -e "LICENSE")
   for file in $files; do
-    rm -rf $HOME/.${file}
-    interactively_call "ln -s $(pwd)/${file} $HOME/.${file}" "Link .${file}"
+    if [[ $file == "nvim" ]]; then
+      mkdir -p $HOME/.config
+      rm -rf $HOME/.config/${file}
+      interactively_call "ln -s $(pwd)/${file} $HOME/.config/${file}" "Link .config/${file}"
+    else
+      rm -rf $HOME/.${file}
+      interactively_call "ln -s $(pwd)/${file} $HOME/.${file}" "Link .${file}"
+    fi
   done
 popd > /dev/null
 
