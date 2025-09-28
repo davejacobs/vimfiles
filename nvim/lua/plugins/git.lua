@@ -8,4 +8,8 @@ return {
       { "<D-B>", ":Gbrowse<CR>", desc = "Browse on GitHub", mode = { "n", "v" } },
     },
   },
+  {
+    "tpope/vim-rhubarb",
+    dependencies = { "tpope/vim-fugitive" },
+  },
 }
