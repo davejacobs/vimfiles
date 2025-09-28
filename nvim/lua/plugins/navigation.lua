@@ -119,7 +119,8 @@ return {
             '^__pycache__$',
             '\\.pyc$',
             'Icon.*',
-            'ruby-lsp'
+            'ruby-lsp',
+            '\\.DS_Store$'
           },
         },
         git = {
