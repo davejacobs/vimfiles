@@ -69,10 +69,11 @@ if has('nvim')
   lua << EOF
     require('mason').setup()
     require('mason-lspconfig').setup()
-    require('lspconfig')['hls'].setup{
+    require('lspconfig')['hls'].setup {
       filetypes = { 'haskell', 'lhaskell', 'cabal' },
     }
-    require'lspconfig'.hls.setup{}
+    require'lspconfig'.hls.setup {}
+    require'lspconfig'.jdtls.setup {}
 EOF
 endif
 
