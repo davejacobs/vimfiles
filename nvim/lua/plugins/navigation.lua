@@ -42,7 +42,7 @@ return {
             "--line-number",
             "--column",
             "--smart-case"
-          },
+          }
         },
         pickers = {
           find_files = {
@@ -54,7 +54,7 @@ return {
               return {"--hidden"}
             end
           },
-        },
+        }
       })
 
       local builtin = require('telescope.builtin')
@@ -94,7 +94,7 @@ return {
       require('nvim-tree').setup({
         on_attach = on_attach,
         view = {
-          width = 25,
+          width = 25
         },
         renderer = {
           icons = {
@@ -103,8 +103,8 @@ return {
               folder = true,
               folder_arrow = true,
               git = false
-            },
-          },
+            }
+          }
         },
         filters = {
           dotfiles = false,
@@ -121,7 +121,7 @@ return {
             'Icon.*',
             'ruby-lsp',
             '\\.DS_Store$'
-          },
+          }
         },
         git = {
           enable = false,
@@ -135,9 +135,9 @@ return {
           open_file = {
             quit_on_open = false,
             resize_window = true,
-          },
-        },
+          }
+        }
       })
-    end,
-  },
+    end
+  }
 }

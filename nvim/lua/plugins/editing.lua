@@ -22,7 +22,7 @@ return {
           visual_line = "gS",
           delete = "ds",
           change = "cs",
-          change_line = "cS",
+          change_line = "cS"
         },
         surrounds = {
           -- Custom surrounds can be added here
@@ -39,7 +39,7 @@ return {
           ["B"] = "}",
           ["r"] = "]",
           ["q"] = { '"', "'", "`" },
-          ["s"] = { "}", "]", ")", ">", '"', "'", "`" },
+          ["s"] = { "}", "]", ")", ">", '"', "'", "`" }
         },
         highlight = {
           duration = 0,
@@ -51,30 +51,30 @@ return {
           if start < stop and (b.equalprg ~= "" or b.indentexpr ~= "" or b.cindent or b.smartindent or b.lisp) then
             vim.cmd(string.format("silent normal! %dG=%dG", start, stop))
           end
-        end,
+        end
       })
-    end,
+    end
   },
   {
     "kana/vim-textobj-user",
-    event = "VeryLazy",
+    event = "VeryLazy"
   },
   {
     "tpope/vim-dispatch",
-    cmd = { "Dispatch", "Make", "Focus", "Start" },
+    cmd = { "Dispatch", "Make", "Focus", "Start" }
   },
   {
     "henrik/vim-qargs",
-    cmd = "Qargs",
+    cmd = "Qargs"
   },
   {
     "mbbill/undotree",
-    cmd = "UndotreeToggle",
+    cmd = "UndotreeToggle"
   },
   {
     "nvim-pack/nvim-spectre",
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      "nvim-lua/plenary.nvim"
     },
     config = function()
       require('spectre').setup({
@@ -154,7 +154,7 @@ return {
             map = "<leader>l",
             cmd = "<cmd>lua require('spectre').resume_last_search()<CR>",
             desc = "resume last search before close"
-          },
+          }
         },
         find_engine = {
           ['rg'] = {
@@ -164,7 +164,7 @@ return {
               '--no-heading',
               '--with-filename',
               '--line-number',
-              '--column',
+              '--column'
             },
             options = {
               ['ignore-case'] = {
@@ -176,9 +176,9 @@ return {
                 value="--hidden",
                 desc="hidden file",
                 icon="[H]"
-              },
+              }
             }
-          },
+          }
         },
         replace_engine = {
           ['sed'] = {
@@ -189,9 +189,9 @@ return {
                 value= "--ignore-case",
                 icon="[I]",
                 desc="ignore case"
-              },
+              }
             }
-          },
+          }
         },
         default = {
           find = {
@@ -212,6 +212,6 @@ return {
       vim.keymap.set('n', '<Leader>sw', '<cmd>SpectreWord<CR>', { desc = 'Search current word' })
       vim.keymap.set('v', '<Leader>sw', '<cmd>lua require("spectre").open_visual()<CR>', { desc = 'Search current selection' })
       vim.keymap.set('n', '<Leader>sp', '<cmd>SpectreFile<CR>', { desc = 'Search in current file' })
-    end,
-  },
+    end
+  }
 }

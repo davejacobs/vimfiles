@@ -26,7 +26,7 @@ require("lazy").setup({
   { import = "plugins.writing" },
   { import = "plugins.coding" },
   { import = "plugins.languages" },
-  { import = "plugins.network" },
+  { import = "plugins.network" }
 }, {
   install = {
     colorscheme = { "nord" },
@@ -40,5 +40,5 @@ require("lazy").setup({
   },
   ui = {
     border = "rounded",
-  },
+  }
 })

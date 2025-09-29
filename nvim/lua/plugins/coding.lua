@@ -23,7 +23,7 @@ return {
           default_direction = "prefer_right",
 
           -- Determines where the aerial window will be opened
-          placement = "window",
+          placement = "window"
         },
 
         -- Determines how the aerial window decides which buffer to display symbols for
@@ -87,8 +87,8 @@ return {
           "Interface",
           "Module",
           "Method",
-          "Struct",
-        },
+          "Struct"
+        }
       })
 
       -- Keybinding for aerial
@@ -96,7 +96,7 @@ return {
 
       -- Telescope integration (if you want to search symbols)
       vim.keymap.set("n", "<leader>ds", "<cmd>Telescope aerial<CR>", { desc = "Search symbols" })
-    end,
+    end
   },
   {
     "stevearc/conform.nvim",
@@ -139,14 +139,14 @@ return {
                 end
               end
               return args
-            end,
+            end
           },
           rubocop = {
-            args = { "--auto-correct", "--format", "files", "--stdin", "$FILENAME" },
+            args = { "--auto-correct", "--format", "files", "--stdin", "$FILENAME" }
           },
           shfmt = {
-            args = { "-i", "2" }, -- 2-space indentation (matches your vim settings)
-          },
+            args = { "-i", "2" } -- 2-space indentation (matches editor settings)
+          }
         }
       })
 
@@ -182,31 +182,30 @@ return {
         -- LHS of toggle mappings in NORMAL mode
         toggler = {
           line = 'gcc',       -- Line-comment toggle keymap
-          block = 'gbc',      -- Block-comment toggle keymap
+          block = 'gbc'       -- Block-comment toggle keymap
         },
         -- LHS of operator-pending mappings in NORMAL and VISUAL mode
         opleader = {
           line = 'gc',        -- Line-comment keymap
-          block = 'gb',       -- Block-comment keymap
+          block = 'gb'        -- Block-comment keymap
         },
         -- LHS of extra mappings
         extra = {
           above = 'gcO',      -- Add comment on the line above
           below = 'gco',      -- Add comment on the line below
-          eol = 'gcA',        -- Add comment at the end of line
+          eol = 'gcA'         -- Add comment at the end of line
         },
         -- Disable default mappings so we can use custom ones
         mappings = {
           basic = true,
           extra = true,
-        },
+        }
       })
 
-      -- Add custom keybindings to match your existing TComment setup
       local api = require('Comment.api')
       vim.keymap.set('n', '<Leader>/', api.toggle.linewise.current, { desc = 'Comment toggle current line' })
       vim.keymap.set('v', '<Leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', { desc = 'Comment toggle linewise (visual)' })
-    end,
+    end
   },
   {
     "tpope/vim-endwise",
@@ -215,5 +214,5 @@ return {
   {
     "vim-scripts/matchit.zip",
     event = "VeryLazy",
-  },
+  }
 }

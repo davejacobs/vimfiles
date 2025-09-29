@@ -34,7 +34,7 @@ cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
-    end,
+    end
   },
   window = {
     completion = cmp.config.window.bordered(),
@@ -133,47 +133,47 @@ setup_server('lua_ls', {
 
 setup_server('hls', {
   cmd = { 'haskell-language-server-wrapper', '--lsp' },
-  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+  filetypes = { 'haskell', 'lhaskell', 'cabal' }
 })
 
 setup_server('jdtls', {
   cmd = { 'jdtls' },
-  filetypes = { 'java' },
+  filetypes = { 'java' }
 })
 
 setup_server('ruby_lsp', {
   cmd = { 'ruby-lsp' },
-  filetypes = { 'ruby' },
+  filetypes = { 'ruby' }
 })
 
 setup_server('ts_ls', {
   cmd = { 'typescript-language-server', '--stdio' },
-  filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
+  filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' }
 })
 
 setup_server('pyright', {
   cmd = { 'pyright-langserver', '--stdio' },
-  filetypes = { 'python' },
+  filetypes = { 'python' }
 })
 
 setup_server('html', {
   cmd = { 'vscode-html-language-server', '--stdio' },
-  filetypes = { 'html' },
+  filetypes = { 'html' }
 })
 
 setup_server('cssls', {
   cmd = { 'vscode-css-language-server', '--stdio' },
-  filetypes = { 'css', 'scss', 'less' },
+  filetypes = { 'css', 'scss', 'less' }
 })
 
 setup_server('jsonls', {
   cmd = { 'vscode-json-language-server', '--stdio' },
-  filetypes = { 'json', 'jsonc' },
+  filetypes = { 'json', 'jsonc' }
 })
 
 setup_server('yamlls', {
   cmd = { 'yaml-language-server', '--stdio' },
-  filetypes = { 'yaml', 'yaml.docker-compose' },
+  filetypes = { 'yaml', 'yaml.docker-compose' }
 })
 
 setup_server('marksman', {
@@ -190,7 +190,7 @@ setup_server('marksman', {
         vim.cmd('LspRestart marksman')
       end)
     end
-  end,
+  end
 })
 
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
@@ -201,7 +201,7 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.ERROR] = signs.Error,
       [vim.diagnostic.severity.WARN] = signs.Warn,
       [vim.diagnostic.severity.HINT] = signs.Hint,
-      [vim.diagnostic.severity.INFO] = signs.Info,
+      [vim.diagnostic.severity.INFO] = signs.Info
     }
   },
   underline = true,

@@ -5,21 +5,21 @@ return {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end,
+    end
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = { "mason.nvim" },
+    dependencies = { "mason.nvim" }
   },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
       "mason.nvim",
-      "mason-lspconfig.nvim",
+      "mason-lspconfig.nvim"
     },
     config = function()
       require("config.lsp")
-    end,
+    end
   },
   {
     "hrsh7th/nvim-cmp",
@@ -29,10 +29,10 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
+      "saadparwaiz1/cmp_luasnip"
     },
     config = function()
       -- nvim-cmp configuration is included in config.lsp
-    end,
-  },
+    end
+  }
 }
