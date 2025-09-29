@@ -166,14 +166,14 @@ return {
       vim.keymap.set({ "n", "v" }, "<Leader>i", function()
         require("conform").format({ async = true, lsp_fallback = true })
       end, { desc = "Format buffer or range (manual)" })
-    end,
+    end
   },
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
       require('Comment').setup({
-        -- Add a space b/w comment and the line (matches your NERDSpaceDelims setting)
+        -- Add a space b/w comment and the line (matches NERDSpaceDelims setting)
         padding = true,
         -- Whether the cursor should stay at its position
         sticky = true,
