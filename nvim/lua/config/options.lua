@@ -36,10 +36,6 @@ vim.opt.incsearch = true  -- Incremental search
 vim.opt.ignorecase = true -- Ignore search case
 vim.opt.smartcase = true  -- ... unless uppercase letters are explicit
 
--- Project functionality
-vim.opt.exrc = true   -- Per-directory .vimrc
-vim.opt.secure = true -- Required for exrc
-
 -- Navigation
 vim.opt.autochdir = true -- Automatically change directory
 
