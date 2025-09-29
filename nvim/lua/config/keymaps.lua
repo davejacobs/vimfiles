@@ -42,5 +42,8 @@ vim.keymap.set('n', '<Leader>n', ':NvimTreeToggle<CR>', { desc = 'Toggle file ex
 -- Copy to system clipboard
 vim.keymap.set('v', '<C-c>', '"+y', { desc = 'Copy to system clipboard' })
 
+-- Smart paste - doesn't overwrite paste buffer when pasting over text
+vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste without overwriting buffer' })
+
 -- Ctrl+P for fuzzy file finding
 vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', { desc = 'Find files' })
