@@ -8,7 +8,7 @@ local function reload_config()
     end
   end
 
-  dofile(vim.env.MYVIMRC or vim.fn.stdpath('config') .. '/init.lua')
+  dofile(vim.fn.stdpath('config') .. '/init.lua')
 
   vim.notify("Config reloaded", vim.log.levels.INFO)
 end
