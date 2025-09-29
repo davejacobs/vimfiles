@@ -17,7 +17,7 @@ vim.opt_local.shiftwidth = 4
 vim.opt_local.number = false
 
 -- Visual padding
-vim.opt_local.signcolumn = 'yes:3'
+vim.opt_local.signcolumn = 'yes:1'
 
 -- Move up and down using apparent lines, not real ones (for wrapped text)
 vim.keymap.set('n', 'j', 'gj', { buffer = true })
