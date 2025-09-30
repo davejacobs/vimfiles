@@ -94,7 +94,8 @@ return {
       require('nvim-tree').setup({
         on_attach = on_attach,
         view = {
-          width = 25
+          width = 25,
+          signcolumn = "no"
         },
         renderer = {
           icons = {
