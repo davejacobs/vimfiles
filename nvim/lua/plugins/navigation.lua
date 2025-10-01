@@ -103,6 +103,7 @@ return {
           signcolumn = "no"
         },
         renderer = {
+          group_empty = true,
           icons = {
             show = {
               file = true,
