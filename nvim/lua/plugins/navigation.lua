@@ -10,6 +10,11 @@ return {
     config = function()
       require('telescope').setup({
         defaults = {
+          mappings = {
+            i = {
+              ["<esc>"] = require('telescope.actions').close,
+            },
+          },
           layout_config = {
             horizontal = {
               preview_width = 0.6,
