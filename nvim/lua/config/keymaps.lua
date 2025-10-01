@@ -47,3 +47,7 @@ vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste without overwriting buffer' })
 
 -- Ctrl+P for fuzzy file finding
 vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', { desc = 'Find files' })
+
+-- Quit shortcuts
+vim.keymap.set('n', '<Leader>q', ':qa<CR>', { desc = 'Quit all' })
+vim.keymap.set('n', '<Leader>w', ':q<CR>', { desc = 'Quit window' })
