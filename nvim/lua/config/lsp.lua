@@ -10,6 +10,8 @@ require('mason').setup({
   }
 })
 
+require('java').setup()
+
 require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',           -- Lua
@@ -136,11 +138,6 @@ setup_server('hls', {
   filetypes = { 'haskell', 'lhaskell', 'cabal' }
 })
 
-setup_server('jdtls', {
-  cmd = { 'jdtls' },
-  filetypes = { 'java' }
-})
-
 setup_server('ruby_lsp', {
   cmd = { 'ruby-lsp' },
   filetypes = { 'ruby' }
@@ -191,6 +188,11 @@ setup_server('marksman', {
       end)
     end
   end
+})
+
+setup_server('jdtls', {
+  cmd = { 'jdtls' },
+  filetypes = { 'java' }
 })
 
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
