@@ -138,7 +138,7 @@ return {
         },
         git = {
           enable = false,
-          ignore = false,
+          ignore = false
         },
         actions = {
           change_dir = {
@@ -147,7 +147,7 @@ return {
           },
           open_file = {
             quit_on_open = false,
-            resize_window = true,
+            resize_window = false
           }
         }
       })
