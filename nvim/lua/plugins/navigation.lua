@@ -98,6 +98,12 @@ return {
 
       require('nvim-tree').setup({
         on_attach = on_attach,
+        sync_root_with_cwd = true,
+        respect_buf_cwd = true,
+        update_focused_file = {
+          enable = true,
+          update_root = false
+        },
         view = {
           width = 25,
           signcolumn = "no"
@@ -137,7 +143,7 @@ return {
         actions = {
           change_dir = {
             enable = true,
-            global = true,
+            global = false
           },
           open_file = {
             quit_on_open = false,
