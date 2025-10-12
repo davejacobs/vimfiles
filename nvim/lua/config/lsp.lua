@@ -10,13 +10,10 @@ require('mason').setup({
   }
 })
 
-require('java').setup()
-
 require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',           -- Lua
     'hls',              -- Haskell
-    'jdtls',            -- Java
     'ruby_lsp',         -- Ruby
     'ts_ls',            -- TypeScript/JavaScript
     'pyright',          -- Python
@@ -27,6 +24,7 @@ require('mason-lspconfig').setup({
     'marksman',         -- Markdown
   },
   automatic_installation = true,
+  automatic_enable = { exclude = { "jdtls" } }
 })
 
 local cmp = require('cmp')
@@ -40,7 +38,7 @@ cmp.setup({
   },
   window = {
     completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -65,14 +63,14 @@ cmp.setup({
       else
         fallback()
       end
-    end, { 'i', 's' }),
+    end, { 'i', 's' })
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
   }, {
-    { name = 'buffer' },
+    { name = 'buffer' }
   })
 })
 
@@ -119,6 +117,7 @@ local function setup_server(name, config)
   config.on_attach = on_attach
 
   vim.lsp.config[name] = config
+  vim.lsp.enable(name)
 end
 
 setup_server('lua_ls', {
@@ -190,11 +189,6 @@ setup_server('marksman', {
   end
 })
 
-setup_server('jdtls', {
-  cmd = { 'jdtls' },
-  filetypes = { 'java' }
-})
-
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 vim.diagnostic.config({
   virtual_text = true,
@@ -215,3 +209,8 @@ vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Open diagn
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic' })
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, { desc = 'Set diagnostic loclist' })
+
+return {
+  on_attach = on_attach,
+  capabilities = capabilities
+}

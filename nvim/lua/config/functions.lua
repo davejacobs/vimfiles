@@ -2,11 +2,6 @@
 
 local M = {}
 
--- Get filetype-specific file path
-M.filetype_file = function()
-  return vim.fn.expand("~/.vim/ftplugin/") .. vim.bo.filetype .. ".vim"
-end
-
 -- Copy current file path with line number to clipboard
 M.copy_path_with_line = function()
   local path_with_line = vim.fn.expand("%") .. ":" .. vim.fn.line(".")

@@ -16,18 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  { import = "plugins.colorscheme" },
-  { import = "plugins.navigation" },
-  { import = "plugins.statusline" },
-  { import = "plugins.git" },
-  { import = "plugins.lsp" },
-  { import = "plugins.editing" },
-  { import = "plugins.writing" },
-  { import = "plugins.coding" },
-  { import = "plugins.languages" },
-  { import = "plugins.network" }
-}, {
+require("lazy").setup("plugins", {
   install = {
     colorscheme = { "nord" },
   },

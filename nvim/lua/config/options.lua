@@ -52,3 +52,10 @@ vim.api.nvim_create_autocmd('FocusLost', {
   command = 'silent! wall',
   desc = 'Save all files when focus is lost'
 })
+
+-- Open help in full window
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'help',
+  command = 'only',
+  desc = 'Open help in full window'
+})

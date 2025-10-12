@@ -19,6 +19,11 @@ vim.opt_local.number = false
 -- Visual padding
 vim.opt_local.signcolumn = 'yes:1'
 
+-- Soft wrap at 100 characters
+vim.opt_local.textwidth = 100
+vim.opt_local.wrap = true
+vim.opt_local.linebreak = true
+
 -- Move up and down using apparent lines, not real ones (for wrapped text)
 vim.keymap.set('n', 'j', 'gj', { buffer = true })
 vim.keymap.set('n', 'k', 'gk', { buffer = true })
