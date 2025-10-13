@@ -16,18 +16,23 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `<S-CR>` - New line below in insert mode
 - `Y` - Yank to end of line
 - `<C-c>` - Copy selection to system clipboard (visual mode)
+- `p` - Paste without overwriting buffer (visual mode)
+- `w!!` - Save with sudo (command mode)
 
 ### Window management
 
 - `<Leader>s` - Horizontal split
 - `<Leader>v` - Vertical split
 - `<C-h/j/k/l>` - Navigate between windows (works in insert, normal, visual modes)
+- `<Leader>q` - Quit all
+- `<Leader>w` - Quit window
 
 ## File exploration and navigation
 
 ### nvim-tree
 
 - `<Leader>n` - Toggle file explorer
+- `<C-b>` - Toggle file explorer
 - `<D-n>` - Toggle file explorer (MacVim)
 
 **Within nvim-tree:**
@@ -39,6 +44,8 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 ### Telescope (fuzzy finding)
 
+- `<C-p>` - Find files
+- `<C-n>` - Find files
 - `<Leader>ff` - Find files
 - `<Leader>fg` - Live grep (search in files)
 - `<Leader>fb` - Find buffers
@@ -70,6 +77,7 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 ### Basic search
 
 - `<Leader>y` - Clear search highlights
+- `<C-y>` - Clear search highlights
 
 ## Text editing and formatting
 
@@ -78,6 +86,9 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `gc` - Toggle comment (normal/visual mode)
 - `gcc` - Toggle comment on current line
 - `gbc` - Toggle block comment
+- `gcO` - Comment above current line
+- `gco` - Comment below current line
+- `gcA` - Comment at end of line
 - `<Leader>/` - Toggle comment on current line or selection
 
 ### nvim-surround
@@ -124,7 +135,12 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `gr` - Go to references
 - `gi` - Go to implementation
 - `K` - Show hover documentation
-- `<C-k>` - Show signature help (insert mode)
+- `<C-k>` - Show signature help (normal mode)
+- `<Leader>D` - Go to type definition
+- `<Leader>e` - Open diagnostic float
+- `<Leader>wa` - Add workspace folder
+- `<Leader>wr` - Remove workspace folder
+- `<Leader>wl` - List workspace folders
 
 ### Code actions
 
@@ -135,9 +151,10 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 ### Completion (nvim-cmp)
 
 - `<C-Space>` - Trigger completion
-- `<C-y>` - Confirm selection
+- `<CR>` - Confirm selection
+- `<Tab>` / `<S-Tab>` - Navigate completion items
 - `<C-e>` - Close completion menu
-- `<C-u>` / `<C-d>` - Scroll documentation
+- `<C-b>` / `<C-f>` - Scroll documentation
 
 ## File and project management
 
@@ -151,6 +168,10 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 ## Code navigation
 
+### undotree (undo history)
+
+- `:UndotreeToggle` - Toggle undo tree visualization
+
 ### aerial.nvim (symbol outline)
 
 - `<Leader>a` - Toggle symbol outline
@@ -159,10 +180,22 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 **Within aerial window:**
 
 - `<CR>` - Jump to symbol
-- `o` - Toggle tree fold
+- `<C-v>` - Jump to symbol in vertical split
+- `<C-s>` - Jump to symbol in horizontal split
+- `o` / `za` - Toggle tree fold
+- `O` / `zA` - Toggle tree fold recursively
+- `l` / `zo` - Open tree node
+- `L` / `zO` - Open tree node recursively
+- `h` / `zc` - Close tree node
+- `H` / `zC` - Close tree node recursively
+- `zr` - Increase fold level
+- `zR` - Open all folds
+- `zm` - Decrease fold level
+- `zM` - Close all folds
 - `q` - Close window
 - `{` / `}` - Previous/next symbol
-- `h` / `l` - Close/open tree nodes
+- `[[` / `]]` - Previous/next symbol (up tree)
+- `?` / `g?` - Show help
 
 ### Tags and Git
 
