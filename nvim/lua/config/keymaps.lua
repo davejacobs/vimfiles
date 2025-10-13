@@ -38,6 +38,7 @@ vim.keymap.set({ 'n', 'v' }, '<D-B>', ':Gbrowse<CR>', { desc = 'Browse on GitHub
 
 -- File explorer and navigation
 vim.keymap.set('n', '<Leader>n', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
+vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
 
 -- Copy to system clipboard
 vim.keymap.set('v', '<C-c>', '"+y', { desc = 'Copy to system clipboard' })
@@ -45,8 +46,7 @@ vim.keymap.set('v', '<C-c>', '"+y', { desc = 'Copy to system clipboard' })
 -- Smart paste - doesn't overwrite paste buffer when pasting over text
 vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste without overwriting buffer' })
 
--- Ctrl+P for fuzzy file finding
-vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', { desc = 'Find files' })
+-- Ctrl+P and Ctrl+N for fuzzy file finding (defined in telescope plugin config for lazy loading)
 
 -- Quit shortcuts
 vim.keymap.set('n', '<Leader>q', ':qa<CR>', { desc = 'Quit all' })

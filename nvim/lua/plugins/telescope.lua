@@ -1,6 +1,19 @@
 return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.8",
+  lazy = true,
+  keys = {
+    { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+    { "<C-n>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+    { "<Leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+    { "<Leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+    { "<Leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
+    { "<Leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find help" },
+    { "<Leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Find recent files" },
+    { "<Leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Find git commits" },
+    { "<Leader>fs", "<cmd>Telescope git_status<cr>", desc = "Find git status" },
+    { "<Leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Find word under cursor" },
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
@@ -57,15 +70,5 @@ return {
         },
       }
     })
-
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<Leader>ff', builtin.find_files, { desc = 'Find files' })
-    vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Live grep' })
-    vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'Find buffers' })
-    vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'Find help' })
-    vim.keymap.set('n', '<Leader>fr', builtin.oldfiles, { desc = 'Find recent files' })
-    vim.keymap.set('n', '<Leader>fc', builtin.git_commits, { desc = 'Find git commits' })
-    vim.keymap.set('n', '<Leader>fs', builtin.git_status, { desc = 'Find git status' })
-    vim.keymap.set('n', '<Leader>fw', builtin.grep_string, { desc = 'Find word under cursor' })
   end,
 }
