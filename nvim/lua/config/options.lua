@@ -37,7 +37,7 @@ vim.opt.ignorecase = true -- Ignore search case
 vim.opt.smartcase = true  -- ... unless uppercase letters are explicit
 
 -- Navigation
-vim.opt.autochdir = true -- Automatically change directory
+-- vim.opt.autochdir = true -- Automatically change directory (disabled for performance)
 
 -- Mouse support
 vim.opt.mouse = 'a'  -- Enable mouse in all modes
