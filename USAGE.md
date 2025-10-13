@@ -261,6 +261,25 @@ Make sure the right linter is installed:
 - **No auto-formatting** - use `<Leader>i` for manual formatting only
 - Auto-linting with nvim-lint for active file types (JavaScript, TypeScript, Ruby, Shell scripts)
 
+## Plugin management
+
+### Lazy.nvim
+
+- `<Leader>l` - Open Lazy plugin manager
+- `:Lazy` - Open Lazy plugin manager
+
+**Within Lazy interface:**
+
+- `U` - Update all plugins
+- `S` - Sync (clean + update)
+- `C` - Check for updates
+- `X` - Clean plugins that are no longer needed
+- `I` - Install missing plugins
+- `L` - Show log
+- `P` - Profile plugin loading times
+- `?` - Show help with all keybindings
+- `q` - Close Lazy
+
 ## Tips
 
 2. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
