@@ -46,6 +46,9 @@ vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste without overwriting buffer' })
 
 -- Ctrl+P and Ctrl+N for fuzzy file finding (defined in telescope plugin config for lazy loading)
 
+-- Plugin management
+vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', { desc = 'Open Lazy plugin manager' })
+
 -- Quit shortcuts
 vim.keymap.set('n', '<Leader>q', ':qa<CR>', { desc = 'Quit all' })
 vim.keymap.set('n', '<Leader>w', ':q<CR>', { desc = 'Quit window' })

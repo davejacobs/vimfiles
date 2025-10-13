@@ -263,7 +263,7 @@ Make sure the right linter is installed:
 
 ## Tips
 
-2. **Plugin management**: Use `:Lazy` to manage plugins (install, update, clean)
+2. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
 3. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
 4. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
 5. **LSP info**: Use `:LspInfo` to check language server status
