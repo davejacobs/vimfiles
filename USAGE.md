@@ -200,7 +200,40 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 ### Tags and Git
 
 - `<Leader>t` - Generate ctags
-- `<D-B>` - Browse current selection/line on GitHub (vim-fugitive)
+
+### vim-fugitive (Git integration)
+
+**Basic commands:**
+
+- `:Git` - Open interactive git status window
+- `:Git blame` - Show git blame for current file
+- `:Git diff` - Show git diff
+- `:Git log` - Show git log
+- `<C-G>` - Browse current file/line on GitHub (requires rhubarb plugin)
+- `<D-B>` - Browse current selection/line on GitHub (MacVim)
+
+**Within git status window:**
+
+- `s` - Stage file under cursor
+- `u` - Unstage file under cursor
+- `-` - Toggle stage/unstage for file under cursor
+- `=` - Toggle inline diff for file under cursor
+- `<CR>` - Open file under cursor
+- `o` - Open file in horizontal split
+- `gO` - Open file in vertical split
+- `O` - Open file in new tab
+- `cc` - Create commit (opens commit message buffer)
+- `ca` - Amend previous commit
+- `ce` - Amend without editing message
+- `.` - Show/hide full diff
+- `g?` - Show help with all commands
+- `R` - Reload git status
+- `q` - Close status window
+
+**In commit message buffer:**
+
+- `:wq` - Complete commit
+- `:q!` - Abort commit
 
 ## Linting and formatting
 
