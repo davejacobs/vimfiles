@@ -19,7 +19,7 @@ vim.opt.clipboard = 'unnamed'                           -- Use system clipboard
 
 -- Editing functionality
 vim.opt.expandtab = true      -- Use soft tabs
-vim.opt.tabstop = 2           -- Width of soft tabs
+vim.opt.tabstop = 2           -- Default width of soft tabs
 vim.opt.autoindent = true     -- Auto indent
 vim.opt.shiftwidth = 2        -- Width of autoindent
 vim.opt.smartindent = false   -- Causes problems, esp. with reindenting hashes
@@ -28,7 +28,7 @@ vim.opt.wrap = false          -- Wrap text inside screen
 vim.opt.linebreak = true      -- Wrap words, not characters
 vim.opt.foldmethod = 'indent' -- Fold using indentation
 vim.opt.foldlevelstart = 20   -- Do not fold by default
-vim.opt.tildeop = true        -- Tilde is an operator (i.e., can be used with modifiers)
+-- vim.opt.tildeop = true        -- Tilde is an operator (i.e., cannot be used with modifiers)
 
 -- Search functionality
 vim.opt.hlsearch = true   -- Highlight search results
@@ -37,16 +37,16 @@ vim.opt.ignorecase = true -- Ignore search case
 vim.opt.smartcase = true  -- ... unless uppercase letters are explicit
 
 -- Navigation
--- vim.opt.autochdir = true -- Automatically change directory (disabled for performance)
+-- vim.opt.autochdir = true -- Automatically change directory
 
 -- Mouse support
 vim.opt.mouse = 'a'  -- Enable mouse in all modes
 
 -- Neovim-specific improvements
 vim.opt.fillchars = { eob = ' ' } -- Remove tildes from blank lines
--- vim.opt.cmdheight = 0          -- Minimal command line (uncomment if desired)
+vim.opt.cmdheight = 0             -- Minimal command line
 
--- Auto-save on focus lost
+-- Auto-save on lost focus
 vim.api.nvim_create_autocmd('FocusLost', {
   pattern = '*',
   command = 'silent! wall',
@@ -57,5 +57,5 @@ vim.api.nvim_create_autocmd('FocusLost', {
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'help',
   command = 'only',
-  desc = 'Open help in full window'
+  desc = 'Open help'
 })

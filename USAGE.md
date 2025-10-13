@@ -149,13 +149,6 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `<Leader>cp` - Edit plugins-config.vim
 - `<Leader>h` - Edit filetype-specific file
 
-### Utility functions
-
-- `<Leader>C` - Copy file path with line number to clipboard
-- `<D-C>` - Copy file path with line number (MacVim)
-- `:CopyPathWithLine` - Command version of above
-- `:StripWhitespace` - Manually strip trailing whitespace
-
 ## Code navigation
 
 ### aerial.nvim (symbol outline)
@@ -184,7 +177,6 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `:Lint` - Run linter command
 - `<Leader>i` - Format current buffer or selection (manual only)
 - `:Format` - Format command
-- `<Leader>R` - Reload Neovim configuration
 
 Make sure the right linter is installed:
 
@@ -204,7 +196,6 @@ Make sure the right linter is installed:
 
 ## Tips
 
-1. **Reloading config**: Use `<Leader>R` or `:luafile ~/.config/nvim/init.lua` or restart Neovim
 2. **Plugin management**: Use `:Lazy` to manage plugins (install, update, clean)
 3. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
 4. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
