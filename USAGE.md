@@ -201,39 +201,40 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 - `<Leader>t` - Generate ctags
 
-### vim-fugitive (Git integration)
+### Neogit (Git integration)
 
 **Basic commands:**
 
-- `:Git` - Open interactive git status window
-- `:Git blame` - Show git blame for current file
-- `:Git diff` - Show git diff
-- `:Git log` - Show git log
-- `<C-G>` - Browse current file/line on GitHub (requires rhubarb plugin)
-- `<D-B>` - Browse current selection/line on GitHub (MacVim)
+- `<C-G>` - Open Neogit interface
+- `:Neogit` - Open Neogit interface
 
-**Within git status window:**
+**Within Neogit interface:**
 
-- `s` - Stage file under cursor
-- `u` - Unstage file under cursor
-- `-` - Toggle stage/unstage for file under cursor
-- `=` - Toggle inline diff for file under cursor
-- `<CR>` - Open file under cursor
-- `o` - Open file in horizontal split
-- `gO` - Open file in vertical split
-- `O` - Open file in new tab
-- `cc` - Create commit (opens commit message buffer)
-- `ca` - Amend previous commit
-- `ce` - Amend without editing message
-- `.` - Show/hide full diff
-- `g?` - Show help with all commands
-- `R` - Reload git status
-- `q` - Close status window
+- `s` - Stage file/hunk under cursor
+- `u` - Unstage file/hunk under cursor
+- `x` - Discard changes under cursor
+- `=` - Toggle diff
+- `<Tab>` - Toggle fold
+- `<CR>` - Open file or expand section
+- `c` - Open commit menu
+  - `c` - Create commit
+  - `a` - Amend commit
+  - `e` - Extend commit
+  - `w` - Reword commit
+- `p` - Open push menu
+- `P` - Open pull menu
+- `Z` - Open stash menu
+- `b` - Open branch menu
+- `l` - Open log menu
+- `r` - Open rebase menu
+- `?` - Show help with all commands
+- `q` - Close Neogit
+- `<C-c>` - Close Neogit
 
-**In commit message buffer:**
+**Diff navigation:**
 
-- `:wq` - Complete commit
-- `:q!` - Abort commit
+- `]c` - Next hunk
+- `[c` - Previous hunk
 
 ## Linting and formatting
 

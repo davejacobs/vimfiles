@@ -34,9 +34,6 @@ vim.keymap.set('n', '<Leader>p', 'vip!par -w 100<CR>', { desc = 'Format paragrap
 vim.keymap.set('n', '<Leader>P', 'ggVG!par -w 100<CR>', { desc = 'Format entire file with par' })
 vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
 
--- GitHub integration (vim-fugitive)
-vim.keymap.set({ 'n', 'v' }, '<D-B>', ':Gbrowse<CR>', { desc = 'Browse on GitHub' })
-
 -- File explorer and navigation
 vim.keymap.set('n', '<Leader>n', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
