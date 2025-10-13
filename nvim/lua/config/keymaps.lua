@@ -28,6 +28,7 @@ vim.keymap.set({ 'i', 'n', 'v' }, '<C-l>', '<C-w>l', window_nav_opts)
 
 -- Search and text manipulation
 vim.keymap.set('n', '<Leader>y', ':nohls<CR>', { desc = 'Clear search highlights' })
+vim.keymap.set('n', '<C-y>', ':nohls<CR>', { desc = 'Clear search highlights' })
 vim.keymap.set('v', '<Leader>p', ':!par -w 100<CR>', { desc = 'Format paragraph (visual)' })
 vim.keymap.set('n', '<Leader>p', 'vip!par -w 100<CR>', { desc = 'Format paragraph' })
 vim.keymap.set('n', '<Leader>P', 'ggVG!par -w 100<CR>', { desc = 'Format entire file with par' })
