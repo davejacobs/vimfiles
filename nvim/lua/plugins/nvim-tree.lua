@@ -20,20 +20,20 @@ return {
     end
 
     require('nvim-tree').setup({
-      -- on_attach = on_attach,
+      on_attach = on_attach,
       -- Changes the tree root directory on DirChanged and refreshes the tree
-      -- sync_root_with_cwd = true,
+      sync_root_with_cwd = true,
       -- Will change cwd of nvim-tree to that of new buffer's when opening nvim-tree
       -- respect_buf_cwd = false,
-      -- update_focused_file = {
-      --   enable = false,
-      --   update_root = false
-      -- },
+      update_focused_file = {
+        enable = true,
+        update_root = false
+      },
       actions = {
         -- vim current-directory behavior
         change_dir = {
           -- Change the working directory when changing directories in the tree
-          enable = false,
+          enable = true,
           -- Use `:cd` instead of `:lcd` when changing directories
           global = false
         },
