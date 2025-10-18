@@ -64,18 +64,21 @@ return {
       filters = {
         dotfiles = false,
         custom = {
-          '^\\.gems$',
-          '^tags$',
-          '^target$',
-          '^node_modules$',
+          '\\.DS_Store$',
           '^tmp$',
           '^log$',
           '^logs$',
-          '^__pycache__$',
-          '\\.pyc$',
+          '^.git$',
+          '^\\.gems$',
+          '^target$',
+          '^build$',
+          '^.mvn$',
+          '^.settings$',
+          '^.classpath$',
+          '^.project$',
+          '^node_modules$',
           'Icon.*',
-          'ruby-lsp',
-          '\\.DS_Store$'
+          'ruby-lsp'
         }
       }
     })
