@@ -1,5 +1,7 @@
 -- Markdown filetype-specific configuration
 
+local WRAP_WIDTH = 100
+
 -- Spell checking
 vim.opt_local.spell = true
 vim.opt_local.spelllang = 'en_us'
@@ -19,10 +21,13 @@ vim.opt_local.number = false
 -- Visual padding
 vim.opt_local.signcolumn = 'yes:1'
 
--- Soft wrap at 100 characters
-vim.opt_local.textwidth = 100
+-- Soft wrap
+vim.opt_local.textwidth = WRAP_WIDTH
 vim.opt_local.wrap = true
 vim.opt_local.linebreak = true
+
+-- Formatting
+vim.opt_local.equalprg = 'mdformat --wrap ' .. WRAP_WIDTH .. ' -'
 
 -- Move up and down using apparent lines, not real ones (for wrapped text)
 vim.keymap.set('n', 'j', 'gj', { buffer = true })

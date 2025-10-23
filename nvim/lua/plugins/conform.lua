@@ -2,6 +2,16 @@ return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
+  keys = {
+    {
+      "<Leader>i",
+      function()
+        require("conform").format({ async = true, lsp_fallback = true })
+      end,
+      mode = { "n", "v" },
+      desc = "Format buffer or range"
+    }
+  },
   config = function()
     require("conform").setup({
       formatters_by_ft = {
@@ -9,7 +19,7 @@ return {
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
-        markdown = { "prettier" },
+        markdown = { "mdformat" },
         sh = { "shfmt" },
         bash = { "shfmt" },
         zsh = { "shfmt" },
@@ -25,6 +35,12 @@ return {
       },
 
       formatters = {
+        mdformat = {
+          args = function()
+            local wrap_width = vim.bo.textwidth > 0 and tostring(vim.bo.textwidth) or "100"
+            return { "--wrap", wrap_width, "-" }
+          end
+        },
         prettier = {
           args = function()
             local args = { "--stdin-filepath", "$FILENAME" }
@@ -59,9 +75,5 @@ return {
       end
       require("conform").format({ async = true, range = range })
     end, { range = true })
-
-    vim.keymap.set({ "n", "v" }, "<Leader>i", function()
-      require("conform").format({ async = true, lsp_fallback = true })
-    end, { desc = "Format buffer or range (manual)" })
   end
 }
