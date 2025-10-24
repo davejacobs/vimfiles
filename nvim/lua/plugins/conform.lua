@@ -10,6 +10,14 @@ return {
       end,
       mode = { "n", "v" },
       desc = "Format buffer or range"
+    },
+    {
+      "<C-i>",
+      function()
+        require("conform").format({ async = true, lsp_fallback = true })
+      end,
+      mode = { "n", "v" },
+      desc = "Format buffer or range"
     }
   },
   config = function()
