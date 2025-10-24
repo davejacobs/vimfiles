@@ -12,7 +12,10 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 ### Basic editing
 
 - `kj` - Exit insert mode
-- `<Leader>=` - Format entire file and return to original position
+- `<Leader>=` - Format entire file with conform.nvim (uses configured formatters)
+- `<Leader>i` - Format buffer or visual selection (async with LSP fallback)
+- `<C-i>` - Format buffer or visual selection (same as `<Leader>i`)
+- `=` - Format with motion (e.g., `gg=G` for entire file, `=ap` for paragraph)
 - `<S-CR>` - New line below in insert mode
 - `Y` - Yank to end of line
 - `<C-c>` - Copy selection to system clipboard (visual mode)
@@ -90,6 +93,7 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `gco` - Comment below current line
 - `gcA` - Comment at end of line
 - `<Leader>/` - Toggle comment on current line or selection
+- `<C-/>` - Toggle comment on current line or selection (same as `<Leader>/`)
 
 ### nvim-surround
 
@@ -128,25 +132,30 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 ## LSP (Language Server Protocol)
 
-### Diagnostics and navigation
+### Navigation
 
 - `gd` - Go to definition
 - `gD` - Go to declaration
-- `gr` - Go to references
+- `gr` - Show references
 - `gi` - Go to implementation
 - `K` - Show hover documentation
-- `<C-k>` - Show signature help (normal mode)
-- `<Leader>D` - Go to type definition
-- `<Leader>e` - Open diagnostic float
-- `<Leader>wa` - Add workspace folder
-- `<Leader>wr` - Remove workspace folder
-- `<Leader>wl` - List workspace folders
+- `<C-k>` - Show signature help
 
-### Code actions
+### Code actions and refactoring
 
-- `<Leader>ca` - Code actions
+- `<Leader>ca` - Code actions (quick fixes, imports, refactorings)
 - `<Leader>rn` - Rename symbol
-- `[d` / `]d` - Navigate diagnostics
+
+### Diagnostics
+
+- `[d` - Go to previous diagnostic
+- `]d` - Go to next diagnostic
+- `<Leader>d` - Open diagnostic float (show error details)
+
+### Java-specific
+
+- `<Leader>oi` - Organize imports (automatically add missing imports and remove unused ones)
+- `<Leader>ca` - Import missing class when cursor is on unresolved symbol
 
 ### Completion (nvim-cmp)
 
@@ -155,6 +164,8 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `<Tab>` / `<S-Tab>` - Navigate completion items
 - `<C-e>` - Close completion menu
 - `<C-b>` / `<C-f>` - Scroll documentation
+
+**Note**: Completion is disabled in Markdown files
 
 ## File and project management
 
@@ -242,18 +253,38 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 - `<Leader>l` - Run linter on current file
 - `:Lint` - Run linter command
-- `<Leader>i` - Format current buffer or selection (manual only)
+- `<Leader>i` / `<C-i>` - Format current buffer or selection (manual only)
+- `<Leader>=` - Format entire file
+- `=` - Format with motion (e.g., `gg=G`, `=ap`)
 - `:Format` - Format command
 
-Make sure the right linter is installed:
+### Formatters by language
 
-    npm install -g eslint prettier
-    pip install ruff mypy
-    gem install rubocop
-    brew install stylua luarocks
-    luarocks install luacheck
-    brew install shellcheck shfmt
-    npm install -g jsonlint markdownlint-cli
+- **Markdown**: mdformat with wrap width from textwidth (default 100)
+- **JavaScript/TypeScript**: prettier
+- **Python**: ruff_format, ruff_fix
+- **Ruby**: rubocop
+- **Shell**: shfmt
+- **Haskell**: fourmolu
+- **HTML/CSS/SCSS/SASS**: prettier
+- **JSON/YAML**: prettier
+
+Make sure the right formatter is installed:
+
+```bash
+# Formatters
+npm install -g prettier
+pip install mdformat ruff
+gem install rubocop
+brew install shfmt
+cabal install fourmolu
+
+# Linters
+npm install -g eslint jsonlint markdownlint-cli
+pip install mypy
+brew install stylua luarocks shellcheck
+luarocks install luacheck
+```
 
 ### Auto-features
 
@@ -283,12 +314,12 @@ Make sure the right linter is installed:
 ## Tips
 
 2. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
-3. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
-4. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
-5. **LSP info**: Use `:LspInfo` to check language server status
-6. **Mason**: Use `:Mason` to manage language servers, linters, and formatters
-7. **Telescope commands**: Use `:Telescope` to see all available pickers
-8. **Zen mode**: Perfect for distraction-free writing and reading
+1. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
+1. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
+1. **LSP info**: Use `:LspInfo` to check language server status
+1. **Mason**: Use `:Mason` to manage language servers, linters, and formatters
+1. **Telescope commands**: Use `:Telescope` to see all available pickers
+1. **Zen mode**: Perfect for distraction-free writing and reading
 
 ## Modern features
 
