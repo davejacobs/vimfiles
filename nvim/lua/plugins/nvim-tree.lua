@@ -77,8 +77,12 @@ return {
           '^.classpath$',
           '^.project$',
           '^node_modules$',
+          '^__pycache__$',
+          '^\\.venv$',
           'Icon.*',
-          'ruby-lsp'
+          'ruby-lsp',
+          '\\.classpath.*',
+          '^\\.claude$'
         }
       }
     })
