@@ -1,6 +1,36 @@
 return {
   "numToStr/Comment.nvim",
   event = "VeryLazy",
+  keys = {
+    {
+      "<Leader>/",
+      function()
+        require('Comment.api').toggle.linewise.current()
+      end,
+      mode = "n",
+      desc = "Comment toggle current line"
+    },
+    {
+      "<Leader>/",
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      mode = "v",
+      desc = "Comment toggle linewise (visual)"
+    },
+    {
+      "<C-/>",
+      function()
+        require('Comment.api').toggle.linewise.current()
+      end,
+      mode = "n",
+      desc = "Comment toggle current line"
+    },
+    {
+      "<C-/>",
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      mode = "v",
+      desc = "Comment toggle linewise (visual)"
+    }
+  },
   config = function()
     require('Comment').setup({
       padding = true,
@@ -24,9 +54,5 @@ return {
         extra = true,
       }
     })
-
-    local api = require('Comment.api')
-    vim.keymap.set('n', '<Leader>/', api.toggle.linewise.current, { desc = 'Comment toggle current line' })
-    vim.keymap.set('v', '<Leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', { desc = 'Comment toggle linewise (visual)' })
   end
 }
