@@ -313,13 +313,13 @@ luarocks install luacheck
 
 ## Tips
 
-2. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
-1. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
-1. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
-1. **LSP info**: Use `:LspInfo` to check language server status
-1. **Mason**: Use `:Mason` to manage language servers, linters, and formatters
-1. **Telescope commands**: Use `:Telescope` to see all available pickers
-1. **Zen mode**: Perfect for distraction-free writing and reading
+1. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
+2. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
+3. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
+4. **LSP info**: Use `:LspInfo` to check language server status
+5. **Mason**: Use `:Mason` to manage language servers, linters, and formatters
+6. **Telescope commands**: Use `:Telescope` to see all available pickers
+7. **Zen mode**: Perfect for distraction-free writing and reading
 
 ## Modern features
 
