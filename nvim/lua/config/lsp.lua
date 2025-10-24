@@ -94,6 +94,34 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(client, bufnr)
+  local opts = { buffer = bufnr }
+
+  -- Code actions (for importing missing classes, quick fixes, etc.)
+  vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, opts)
+
+  -- Go to definition/declaration
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+
+  -- Show documentation
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+
+  -- Go to implementation
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+
+  -- Show references
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+
+  -- Rename symbol
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
+
+  -- Show signature help
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+
+  -- Diagnostics
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, opts)
 end
 
 local function setup_server(name, config)
