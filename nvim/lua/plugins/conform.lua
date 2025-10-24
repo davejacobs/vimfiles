@@ -46,7 +46,7 @@ return {
         mdformat = {
           args = function()
             local wrap_width = vim.bo.textwidth > 0 and tostring(vim.bo.textwidth) or "100"
-            return { "--wrap", wrap_width, "-" }
+            return { "--wrap", wrap_width, "--number", "-" }
           end
         },
         prettier = {
