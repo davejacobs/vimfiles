@@ -23,7 +23,11 @@ return {
         mappings = {
           i = {
             ["<esc>"] = require('telescope.actions').close,
+            ["<C-t>"] = require('telescope.actions.layout').toggle_preview,
           },
+          n = {
+            ["<C-t>"] = require('telescope.actions.layout').toggle_preview,
+          }
         },
         layout_config = {
           horizontal = {
