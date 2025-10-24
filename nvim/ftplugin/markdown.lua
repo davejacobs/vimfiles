@@ -2,6 +2,12 @@
 
 local WRAP_WIDTH = 100
 
+-- Disable completion
+local cmp_ok, cmp = pcall(require, 'cmp')
+if cmp_ok then
+  cmp.setup.buffer({ enabled = false })
+end
+
 -- Spell checking
 vim.opt_local.spell = true
 vim.opt_local.spelllang = 'en_us'
