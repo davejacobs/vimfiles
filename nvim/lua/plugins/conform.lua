@@ -12,7 +12,7 @@ return {
       desc = "Format buffer or range"
     },
     {
-      "<C-i>",
+      "<C-=>",
       function()
         require("conform").format({ async = true, lsp_fallback = true })
       end,

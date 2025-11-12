@@ -17,6 +17,7 @@ return {
       vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts "Up")
       vim.keymap.set("n", "<CR>", api.node.open.edit, opts "Open")
       vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
+      vim.keymap.set("n", "I", api.tree.toggle_custom_filter, opts "Toggle Ignored Files")
     end
 
     require('nvim-tree').setup({
@@ -76,6 +77,7 @@ return {
           '^.settings$',
           '^.classpath$',
           '^.project$',
+          '^.idea$',
           '^node_modules$',
           '^__pycache__$',
           '^\\.venv$',

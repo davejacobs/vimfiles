@@ -14,7 +14,7 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `kj` - Exit insert mode
 - `<Leader>=` - Format entire file with conform.nvim (uses configured formatters)
 - `<Leader>i` - Format buffer or visual selection (async with LSP fallback)
-- `<C-i>` - Format buffer or visual selection (same as `<Leader>i`)
+- `<C-I>` - Format buffer or visual selection (same as `<Leader>i`)
 - `=` - Format with motion (e.g., `gg=G` for entire file, `=ap` for paragraph)
 - `<S-CR>` - New line below in insert mode
 - `Y` - Yank to end of line
@@ -44,6 +44,7 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `u` - Change root to parent directory
 - `<CR>` - Open file
 - `v` - Open in vertical split
+- `I` - Toggle ignored files
 
 ### Telescope (fuzzy finding)
 
