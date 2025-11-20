@@ -52,7 +52,7 @@ return {
         prettier = {
           args = function()
             local args = { "--stdin-filepath", "$FILENAME" }
-            local config_files = {".prettierrc", ".prettierrc.json", ".prettierrc.js", "prettier.config.js"}
+            local config_files = { ".prettierrc", ".prettierrc.json", ".prettierrc.js", "prettier.config.js" }
             for _, config in ipairs(config_files) do
               if vim.fn.filereadable(config) == 1 then
                 table.insert(args, "--config")
