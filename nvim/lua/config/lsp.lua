@@ -22,6 +22,7 @@ require('mason-lspconfig').setup({
     'jsonls',           -- JSON
     'yamlls',           -- YAML
     'marksman',         -- Markdown
+    'clangd',           -- C/C++
   },
   automatic_installation = true,
   automatic_enable = { exclude = { "jdtls" } }
@@ -200,6 +201,11 @@ setup_server('marksman', {
       end)
     end
   end
+})
+
+setup_server('clangd', {
+  cmd = { 'clangd' },
+  filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' }
 })
 
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
