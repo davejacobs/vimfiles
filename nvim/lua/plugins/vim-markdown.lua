@@ -7,5 +7,6 @@ return {
     vim.g.vim_markdown_math = 1
     vim.g.vim_markdown_strikethrough = 1
     vim.g.vim_markdown_auto_insert_bullets = 1
+    vim.g.vim_markdown_fenced_languages = { "soar" }
   end
 }
