@@ -1,5 +1,7 @@
 -- Markdown filetype-specific configuration
 
+vim.treesitter.start()
+
 local WRAP_WIDTH = 100
 
 -- Disable completion
