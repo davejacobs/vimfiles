@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.8",
   lazy = true,
   keys = {
     { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
