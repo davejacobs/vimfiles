@@ -102,6 +102,7 @@ local on_attach = function(client, bufnr)
 
   -- Go to definition/declaration
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 
   -- Show documentation
