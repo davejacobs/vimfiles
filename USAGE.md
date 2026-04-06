@@ -1,32 +1,57 @@
 # Usage
 
-This guide covers the modern plugins and keybindings in this Neovim configuration.
+This guide covers some of the highlights of this configuration.
 
-## Core keybindings
+## Plugin management
+
+### Lazy.nvim
+
+- `<Leader>l` - Open Lazy plugin manager
+- `:Lazy` - Open Lazy plugin manager
+
+**Within Lazy interface:**
+
+- `U` - Update all plugins
+- `S` - Sync (clean + update)
+- `C` - Check for updates
+- `X` - Clean plugins that are no longer needed
+- `I` - Install missing plugins
+- `L` - Show log
+- `P` - Profile plugin loading times
+- `?` - Show help with all keybindings
+- `q` - Close Lazy
+
+## Important keybindings
 
 ### Leaders
 
 - **Leader key**: `,` (comma)
 - **Local leader**: `;` (semicolon)
 
+### Settings
+
+- `<Leader>cv` - Edit init.lua
+- `<Leader>cg` - Edit gvimrc
+- `<Leader>cb` - Edit plugins.vim
+- `<Leader>cp` - Edit plugins-config.vim
+- `<Leader>h` - Edit filetype-specific file
+
 ### Basic editing
 
 - `kj` - Exit insert mode
 - `<Leader>=` - Format entire file with conform.nvim (uses configured formatters)
 - `<Leader>i` - Format buffer or visual selection (async with LSP fallback)
-- `<C-I>` - Format buffer or visual selection (same as `<Leader>i`)
 - `=` - Format with motion (e.g., `gg=G` for entire file, `=ap` for paragraph)
+- `Y` - Yank to end of line, mirroring the built-in behavior of D and C
+- `p` - Paste is modified not to overwrite the buffer in visual mode
 - `<S-CR>` - New line below in insert mode
-- `Y` - Yank to end of line
-- `<C-c>` - Copy selection to system clipboard (visual mode)
-- `p` - Paste without overwriting buffer (visual mode)
-- `w!!` - Save with sudo (command mode)
+- `:w!!` - Save current buffer with sudo
 
 ### Window management
 
 - `<Leader>s` - Horizontal split
 - `<Leader>v` - Vertical split
-- `<C-h/j/k/l>` - Navigate between windows (works in insert, normal, visual modes)
+- `<C-h/j/k/l>` - Navigate between windows
 - `<Leader>q` - Quit all
 - `<Leader>w` - Quit window
 
@@ -36,20 +61,10 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 - `<Leader>n` - Toggle file explorer
 - `<C-b>` - Toggle file explorer
-- `<D-n>` - Toggle file explorer (MacVim)
 
-**Within nvim-tree:**
+### Telescope
 
-- `C` - Change root to selected node
-- `u` - Change root to parent directory
-- `<CR>` - Open file
-- `v` - Open in vertical split
-- `I` - Toggle ignored files
-
-### Telescope (fuzzy finding)
-
-- `<C-p>` - Find files
-- `<C-n>` - Find files
+- `<C-p>` and `<C-n>` - Find files
 - `<Leader>ff` - Find files
 - `<Leader>fg` - Live grep (search in files)
 - `<Leader>fb` - Find buffers
@@ -78,7 +93,7 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `ti` - Toggle ignore case
 - `th` - Toggle hidden files
 
-### Basic search
+### Clearing search
 
 - `<Leader>y` - Clear search highlights
 - `<C-y>` - Clear search highlights
@@ -113,23 +128,17 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `q` = any quote (`"`, `'`, `` ` ``)
 - `s` = any surround character
 
+## Writing and focus
+
 ### Text formatting
 
+- `<Leader>i` - Format document using mdformat
 - `<Leader>p` - Format current paragraph with par
 - `<Leader>P` - Format entire file with par
-- `<D-p>` - Format paragraph (MacVim)
-
-## Writing and focus
 
 ### zen-mode (distraction-free writing)
 
 - `<Leader>z` - Toggle zen mode for focused writing
-
-### Markdown tools
-
-- Automatic list continuation
-- Enhanced syntax highlighting
-- Table formatting support
 
 ## LSP (Language Server Protocol)
 
@@ -168,21 +177,7 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 
 **Note**: Completion is disabled in Markdown files
 
-## File and project management
-
-### Quick config access
-
-- `<Leader>cv` - Edit init.lua
-- `<Leader>cg` - Edit gvimrc
-- `<Leader>cb` - Edit plugins.vim
-- `<Leader>cp` - Edit plugins-config.vim
-- `<Leader>h` - Edit filetype-specific file
-
 ## Code navigation
-
-### undotree (undo history)
-
-- `:UndotreeToggle` - Toggle undo tree visualization
 
 ### aerial.nvim (symbol outline)
 
@@ -248,6 +243,10 @@ This guide covers the modern plugins and keybindings in this Neovim configuratio
 - `]c` - Next hunk
 - `[c` - Previous hunk
 
+### undotree (undo history)
+
+- `:UndotreeToggle` - Toggle undo tree visualization
+
 ## Linting and formatting
 
 ### Manual controls
@@ -287,31 +286,6 @@ brew install stylua luarocks shellcheck
 luarocks install luacheck
 ```
 
-### Auto-features
-
-- Trailing whitespace automatically stripped on save for: js, rb, py, scss, md
-- **No auto-formatting** - use `<Leader>i` for manual formatting only
-- Auto-linting with nvim-lint for active file types (JavaScript, TypeScript, Ruby, Shell scripts)
-
-## Plugin management
-
-### Lazy.nvim
-
-- `<Leader>l` - Open Lazy plugin manager
-- `:Lazy` - Open Lazy plugin manager
-
-**Within Lazy interface:**
-
-- `U` - Update all plugins
-- `S` - Sync (clean + update)
-- `C` - Check for updates
-- `X` - Clean plugins that are no longer needed
-- `I` - Install missing plugins
-- `L` - Show log
-- `P` - Profile plugin loading times
-- `?` - Show help with all keybindings
-- `q` - Close Lazy
-
 ## Tips
 
 1. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
@@ -321,11 +295,3 @@ luarocks install luacheck
 5. **Mason**: Use `:Mason` to manage language servers, linters, and formatters
 6. **Telescope commands**: Use `:Telescope` to see all available pickers
 7. **Zen mode**: Perfect for distraction-free writing and reading
-
-## Modern features
-
-- **Lazy loading**: Plugins load only when needed for faster startup
-- **LSP integration**: Modern language server support with nvim 0.11+ APIs
-- **Async linting/formatting**: Non-blocking code quality tools
-- **Fuzzy finding**: Powerful file and content search with Telescope
-- **Tree-sitter**: Advanced syntax highlighting and code understanding
