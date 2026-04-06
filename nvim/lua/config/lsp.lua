@@ -1,33 +1,5 @@
 -- LSP configuration
 
-require('mason').setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
-})
-
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'lua_ls',           -- Lua
-    'hls',              -- Haskell
-    'ruby_lsp',         -- Ruby
-    'ts_ls',            -- TypeScript/JavaScript
-    'pyright',          -- Python
-    'html',             -- HTML
-    'cssls',            -- CSS
-    'jsonls',           -- JSON
-    'yamlls',           -- YAML
-    'marksman',         -- Markdown
-    'clangd',           -- C/C++
-  },
-  automatic_installation = true,
-  automatic_enable = { exclude = { "jdtls" } }
-})
-
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
