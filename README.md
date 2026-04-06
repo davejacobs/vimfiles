@@ -6,8 +6,8 @@ My Neovim configuration.
 
 - Curl
 - Git
-- Neovim (for Vim support, check out the `vim` branch)
-- Nerd font for the font you're using in you're terminal
+- Neovim 0.12+ (for Vim support, check out the `vim` branch)
+- "Nerd font" variant of the font you're using in the terminal
 
 ## Install
 
