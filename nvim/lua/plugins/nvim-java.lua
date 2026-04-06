@@ -1,9 +1,7 @@
 return {
   "nvim-java/nvim-java",
-  dependencies = {
-    "neovim/nvim-lspconfig"
-  },
   ft = "java",
+  branch = "v4.0.0",
   config = function()
     local lsp_config = require('config.lsp')
 
@@ -13,9 +11,11 @@ return {
       }
     })
 
-    require('lspconfig').jdtls.setup({
+    vim.lsp.config('jdtls', {
       on_attach = lsp_config.on_attach,
       capabilities = lsp_config.capabilities
     })
+
+    vim.lsp.enable('jdtls')
   end
 }
