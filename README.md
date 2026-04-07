@@ -1,6 +1,9 @@
 # Vimfiles
 
-My Neovim configuration.
+My Neovim configuration, using the Nordic theme. Leader is `,`, escape is `kj`,
+and formatting is manual rather than on-save.
+
+![Screenshot](images/Screenshot.png)
 
 ## Prerequisites
 
@@ -8,7 +11,7 @@ My Neovim configuration.
 - Git
 - Neovim 0.12+
 - tree-sitter CLI 0.26.1+ (`brew install tree-sitter-cli`)
-- "Nerd font" variant of the font you're using in the terminal
+- "Nerd font" variant of the font you're using in the terminal (required for Nordic theme icons)
 
 ### LSP servers
 
@@ -37,4 +40,4 @@ bin/link
 
 ## Usage
 
-See [USAGE](/USAGE.md) for more information.
+See [USAGE](/USAGE.md) for keybindings, plugin details, and how to add language support.
