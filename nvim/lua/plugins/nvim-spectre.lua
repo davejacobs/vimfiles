@@ -134,9 +134,9 @@ return {
       is_insert_mode = false
     })
 
-    vim.keymap.set('n', '<Leader>S', '<cmd>SpectreOpen<CR>', { desc = 'Open Spectre' })
-    vim.keymap.set('n', '<Leader>sw', '<cmd>SpectreWord<CR>', { desc = 'Search current word' })
-    vim.keymap.set('v', '<Leader>sw', '<cmd>lua require("spectre").open_visual()<CR>', { desc = 'Search current selection' })
-    vim.keymap.set('n', '<Leader>sp', '<cmd>SpectreFile<CR>', { desc = 'Search in current file' })
+    vim.keymap.set('n', '<Leader>S', require('spectre').open, { desc = 'Open Spectre' })
+    vim.keymap.set('n', '<Leader>sw', function() require('spectre').open_visual({ select_word = true }) end, { desc = 'Search current word' })
+    vim.keymap.set('v', '<Leader>sw', require('spectre').open_visual, { desc = 'Search current selection' })
+    vim.keymap.set('n', '<Leader>sp', require('spectre').open_file_search, { desc = 'Search in current file' })
   end
 }
