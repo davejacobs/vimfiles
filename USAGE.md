@@ -286,12 +286,43 @@ brew install stylua luarocks shellcheck
 luarocks install luacheck
 ```
 
+## Adding support for a new language
+
+Full support for a language requires changes in up to three places:
+
+**1. LSP server** — for code intelligence (go-to-definition, hover docs, diagnostics, etc.)
+
+Install the server binary (see README for examples), create
+`nvim/lsp/<server_name>.lua` returning a config table:
+
+```lua
+return {
+  cmd = { 'my-language-server', '--stdio' },
+  filetypes = { 'mylang' }
+}
+```
+
+Then add `'<server_name>'` to the `vim.lsp.enable({...})` call in
+`nvim/lua/config/lsp.lua`.
+
+**2. Treesitter parser** — for syntax highlighting and for Comment.nvim to
+resolve comment strings (without this, `,/` will fail with a nil error)
+
+Add the parser name to the install list and the filetype to the `FileType`
+autocmd pattern in `nvim/lua/plugins/treesitter.lua`. The parser name (e.g.
+`bash`) and the Neovim filetype (e.g. `sh`) are sometimes different — check
+`:h ft` or `:set ft?` in a buffer of that type if unsure. Restart Neovim to
+trigger the install.
+
+**3. Formatter/linter** (optional) — see the "Formatters by language" section
+above. Add entries to `nvim/lua/plugins/conform.lua` and/or
+`nvim/lua/plugins/nvim-lint.lua`.
+
 ## Tips
 
 1. **Plugin management**: Use `<Leader>l` or `:Lazy` to manage plugins (install, update, clean)
 2. **Plugin help**: Use `:help <plugin-name>` for detailed documentation
 3. **Key mapping help**: Use `:nmap <key>` to see what a key is mapped to
 4. **LSP info**: Use `:LspInfo` to check language server status
-5. **Mason**: Use `:Mason` to manage language servers, linters, and formatters
-6. **Telescope commands**: Use `:Telescope` to see all available pickers
-7. **Zen mode**: Perfect for distraction-free writing and reading
+5. **Telescope commands**: Use `:Telescope` to see all available pickers
+6. **Zen mode**: Perfect for distraction-free writing and reading
