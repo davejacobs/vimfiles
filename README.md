@@ -7,6 +7,7 @@ My Neovim configuration.
 - Curl
 - Git
 - Neovim 0.12+ (for Vim support, check out the `vim` branch)
+- tree-sitter CLI 0.26.1+ (`brew install tree-sitter-cli`)
 - "Nerd font" variant of the font you're using in the terminal
 
 ### LSP servers
@@ -20,6 +21,7 @@ Install the language servers for the languages you use:
     npm install -g pyright                    # Python
     npm install -g vscode-langservers-extracted  # HTML, CSS, JSON
     npm install -g yaml-language-server       # YAML
+    brew install clojure-lsp/brew/clojure-lsp-native  # Clojure
     brew install marksman                     # Markdown
     brew install llvm                         # C/C++ (provides clangd)
 
