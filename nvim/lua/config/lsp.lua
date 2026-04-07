@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.lsp.enable({
   'lua_ls',
   'hls',
+  'clojure_lsp',
   'ruby_lsp',
   'ts_ls',
   'pyright',
