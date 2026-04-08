@@ -20,6 +20,15 @@ return {
       vim.keymap.set("n", "I", api.tree.toggle_custom_filter, opts "Toggle Ignored Files")
     end
 
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function(data)
+        local is_file = vim.fn.filereadable(data.file) == 1
+        if not is_file then
+          require("nvim-tree.api").tree.open()
+        end
+      end
+    })
+
     require('nvim-tree').setup({
       on_attach = on_attach,
       -- Changes the tree root directory on DirChanged and refreshes the tree
