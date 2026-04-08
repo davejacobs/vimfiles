@@ -1,8 +1,5 @@
 return {
   "folke/zen-mode.nvim",
-  dependencies = {
-    "folke/twilight.nvim",
-  },
   cmd = "ZenMode",
   keys = {
     { "<Leader>z", "<cmd>ZenMode<cr>", desc = "Toggle zen mode" },
@@ -29,7 +26,6 @@ return {
           ruler = false,
           showcmd = false
         },
-        twilight = { enabled = true },
         gitsigns = { enabled = false },
         tmux = { enabled = false },
         kitty = {
@@ -49,24 +45,6 @@ return {
       end,
       on_close = function()
       end
-    })
-
-    require("twilight").setup({
-      dimming = {
-        alpha = 0.4,
-        color = { "Normal", "#5E81AC" },
-        term_bg = "#2E3440",
-        inactive = false,
-      },
-      context = 10,
-      treesitter = true,
-      expand = {
-        "function",
-        "method",
-        "table",
-        "if_statement",
-      },
-      exclude = {},
     })
   end
 }
