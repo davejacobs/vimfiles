@@ -8,7 +8,7 @@ return {
     require("zen-mode").setup({
       window = {
         backdrop = 1,
-        width = 100,
+        width = 102,
         height = 0.9,
         options = {
           signcolumn = "no",
@@ -42,8 +42,16 @@ return {
         },
       },
       on_open = function(win)
+        local group = vim.api.nvim_create_augroup("ZenModeSignColumn", { clear = true })
+        vim.api.nvim_create_autocmd("BufEnter", {
+          group = group,
+          callback = function()
+            vim.wo[win].signcolumn = "no"
+          end
+        })
       end,
       on_close = function()
+        vim.api.nvim_del_augroup_by_name("ZenModeSignColumn")
       end
     })
   end
