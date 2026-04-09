@@ -1,4 +1,4 @@
 return {
   "ledger/vim-ledger",
-  ft = "ledger",
+  ft = "ledger"
 }
