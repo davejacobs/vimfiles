@@ -23,6 +23,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
+        soar = { "soarfmt" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
@@ -43,6 +44,9 @@ return {
       },
 
       formatters = {
+        soarfmt = {
+          command = "soarfmt",
+        },
         mdformat = {
           args = function()
             local wrap_width = vim.bo.textwidth > 0 and tostring(vim.bo.textwidth) or "100"
