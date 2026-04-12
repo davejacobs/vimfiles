@@ -1,0 +1,1 @@
+../../vendor/soar-treesitter/queries/highlights.scm

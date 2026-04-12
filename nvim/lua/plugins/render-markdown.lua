@@ -3,6 +3,7 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   ft = { "markdown" },
   opts = {
-    indent = { enabled = false }
+    indent = { enabled = false },
+    code = { enabled = false }
   }
 }

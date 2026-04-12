@@ -33,7 +33,12 @@ return {
     }
   },
   config = function()
-    require('ts_context_commentstring').setup({ enable_autocmd = false })
+    require('ts_context_commentstring').setup({
+      enable_autocmd = false,
+      languages = {
+        json = '// %s'
+      }
+    })
     require('Comment').setup({
       padding = true,
       sticky = true,

@@ -3,6 +3,20 @@ return {
   build = ":TSUpdate",
   lazy = false,
   config = function()
+    -- TSInstall clears and reloads the parsers module, so we re-register soar
+    -- on TSUpdate (which fires after every reload) as well as at startup.
+    local function register_soar()
+      require("nvim-treesitter.parsers").soar = {
+        install_info = {
+          path = vim.fn.stdpath("config") .. "/vendor/soar-treesitter",
+          files = { "src/parser.c" },
+        },
+        filetype = "soar",
+      }
+    end
+    register_soar()
+    vim.api.nvim_create_autocmd("User", { pattern = "TSUpdate", callback = register_soar })
+
     require("nvim-treesitter").install {
       "bash",
       "c",
@@ -19,6 +33,7 @@ return {
       "python",
       "ruby",
       "typescript",
+      "soar",
       "yaml"
     }
     vim.api.nvim_create_autocmd("FileType", {
@@ -37,6 +52,7 @@ return {
         "python",
         "ruby",
         "sh",
+        "soar",
         "typescript",
         "yaml"
       },
