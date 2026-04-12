@@ -1,2 +1,3 @@
 nvim/spell
 nvim/lazy-lock.json
+nvim/vendor/**/*.so
