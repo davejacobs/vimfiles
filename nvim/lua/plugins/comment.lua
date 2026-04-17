@@ -36,7 +36,8 @@ return {
     require('ts_context_commentstring').setup({
       enable_autocmd = false,
       languages = {
-        json = '// %s'
+        json = '// %s',
+        toml = '# %s'
       }
     })
     require('Comment').setup({
