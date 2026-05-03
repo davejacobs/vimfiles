@@ -39,7 +39,7 @@ return {
         css = { "prettier" },
         scss = { "prettier" },
         sass = { "prettier" },
-        json = { "prettier" },
+        json = { "jq" },
         yaml = { "prettier" }
       },
 
@@ -72,6 +72,9 @@ return {
         },
         shfmt = {
           args = { "-i", "2" }
+        },
+        jq = {
+          args = { "--indent", "4", "." }
         }
       }
     })
