@@ -74,7 +74,7 @@ return {
           args = { "-i", "2" }
         },
         jq = {
-          args = { "--indent", "4", "." }
+          args = { "--indent", "2", "." }
         }
       }
     })
