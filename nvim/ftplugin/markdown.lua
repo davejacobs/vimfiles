@@ -35,6 +35,9 @@ vim.opt_local.linebreak = true
 -- Formatting
 vim.opt_local.equalprg = 'mdformat --wrap ' .. WRAP_WIDTH .. ' -'
 
+-- Follow links with ctrl+]
+vim.keymap.set('n', '<C-]>', 'gf', { buffer = true })
+
 -- Move up and down using apparent lines, not real ones (for wrapped text)
 vim.keymap.set('n', 'j', 'gj', { buffer = true })
 vim.keymap.set('n', 'k', 'gk', { buffer = true })
