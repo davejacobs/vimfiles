@@ -40,6 +40,7 @@ return {
         toml = '# %s'
       }
     })
+    local ts_pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
     require('Comment').setup({
       padding = true,
       sticky = true,
@@ -61,7 +62,16 @@ return {
         basic = true,
         extra = true,
       },
-      pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
+      -- Prefer the treesitter-aware commentstring (for embedded languages), but
+      -- always fall back to the buffer's own commentstring. Returning a value here
+      -- short-circuits Comment.nvim's built-in treesitter fallback, which crashes on
+      -- Neovim 0.12 for any filetype lacking an installed parser (get_parser now
+      -- returns nil instead of erroring, defeating the plugin's pcall guard). Even
+      -- an empty string is truthy, so a filetype with no commentstring gets a clear
+      -- "invalid commentstring" message rather than the opaque "[Comment.nvim] nil".
+      pre_hook = function(ctx)
+        return ts_pre_hook(ctx) or vim.bo.commentstring
+      end
     })
   end
 }
