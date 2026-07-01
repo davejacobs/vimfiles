@@ -46,6 +46,11 @@ vim.opt.mouse = 'a'  -- Enable mouse in all modes
 vim.opt.fillchars = { eob = ' ' } -- Remove tildes from blank lines
 vim.opt.cmdheight = 0             -- Minimal command line
 
+-- GUI font (MacNeovim)
+if vim.env.MACNEOVIM == '1' then
+  vim.opt.guifont = "Hack_Nerd_Font_Mono:h14"
+end
+
 -- Auto-save on lost focus
 vim.api.nvim_create_autocmd('FocusLost', {
   pattern = '*',
