@@ -14,8 +14,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
     vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, opts)
 
-    -- Shift+click to go to definition
+    -- Shift+click / Cmd+click to go to definition
     vim.keymap.set('n', '<S-LeftMouse>', '<LeftMouse><Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.keymap.set('n', '<D-LeftMouse>', '<LeftMouse><Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   end
 })
 
