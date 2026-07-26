@@ -160,6 +160,31 @@ Fill in the Search and Replace fields to preview matches live across the project
 - `]d` - Go to next diagnostic
 - `<Leader>d` - Open diagnostic float (show error details)
 
+### Diagnosing LSP state
+
+When a server won't attach or misbehaves, work from quickest check to deepest:
+
+- `:checkhealth vim.lsp` - Health check showing attached clients, root dirs, configured
+  commands, and common misconfigurations. First stop.
+- `:LspInfo` - Clients attached to the current buffer (on Neovim 0.11+ this aliases
+  `:checkhealth vim.lsp`).
+- `:lua =vim.lsp.get_clients()` - All active clients, pretty-printed (`=` is shorthand for
+  `print(vim.inspect(...))`).
+- `:lua =vim.lsp.get_clients({ bufnr = 0 })` - Clients on the current buffer only; index into
+  the result for `.root_dir` or `.server_capabilities`.
+- `:lua vim.cmd('edit ' .. vim.lsp.get_log_path())` - Open the LSP log to see spawn errors,
+  crashes, and malformed responses.
+- `:lua vim.lsp.set_log_level("debug")` - Bump log verbosity while reproducing an issue.
+
+For the diagnostics themselves rather than the client:
+
+- `:lua =vim.diagnostic.get(0)` - Diagnostics in the current buffer.
+- `:lua =vim.diagnostic.config()` - How diagnostics are displayed.
+
+Typical workflow: `:checkhealth vim.lsp` to confirm the client attached; if not, check the log
+for spawn or root-dir errors; if attached but misbehaving, inspect `server_capabilities` and set
+the log level to `debug`.
+
 ### Java-specific
 
 - `<Leader>oi` - Organize imports (automatically add missing imports and remove unused ones)
