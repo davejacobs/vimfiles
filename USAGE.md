@@ -60,7 +60,6 @@ This guide covers some of the highlights of this configuration.
 ### nvim-tree
 
 - `<Leader>n` - Toggle file explorer
-- `<C-b>` - Toggle file explorer
 
 ### Telescope
 

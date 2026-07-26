@@ -36,7 +36,6 @@ vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
 
 -- File explorer and navigation
 vim.keymap.set('n', '<Leader>n', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
-vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
 
 -- Copy to system clipboard
 vim.keymap.set('v', '<C-c>', '"+y', { desc = 'Copy to system clipboard' })
