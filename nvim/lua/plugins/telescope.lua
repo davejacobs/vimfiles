@@ -8,7 +8,7 @@ return {
     { "<Leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
     { "<Leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
     { "<Leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find help" },
-    { "<Leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Find recent files" },
+    { "<Leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Find recent files" },
     { "<Leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Find git commits" },
     { "<Leader>fs", "<cmd>Telescope git_status<cr>", desc = "Find git status" },
     { "<Leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Find word under cursor" },

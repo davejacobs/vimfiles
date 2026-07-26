@@ -69,29 +69,28 @@ This guide covers some of the highlights of this configuration.
 - `<Leader>fg` - Live grep (search in files)
 - `<Leader>fb` - Find buffers
 - `<Leader>fh` - Find help tags
-- `<Leader>fr` - Find recent files
+- `<Leader>fo` - Find recent files
 - `<Leader>fc` - Find git commits
 - `<Leader>fs` - Find git status
 - `<Leader>fw` - Find word under cursor
 
 ## Search and replace
 
-### nvim-spectre (advanced find/replace)
+### grug-far (project-wide find/replace)
 
-- `<Leader>S` - Open Spectre panel
-- `<Leader>sw` - Search word under cursor (also works in visual mode)
-- `<Leader>sp` - Search in current file
+- `<Leader>fr` - Open find and replace (in visual mode, prefills the search with the selection)
+- `<Leader>fp` - Find and replace scoped to the current file
 
-**Within Spectre:**
+**Within the grug-far buffer:**
 
-- `<CR>` - Go to file/line
-- `dd` - Toggle current item
-- `<Leader>R` - Replace all
-- `<Leader>rc` - Replace current line
-- `<Leader>q` - Send to quickfix
-- `<Leader>o` - Show options
-- `ti` - Toggle ignore case
-- `th` - Toggle hidden files
+Fill in the Search and Replace fields to preview matches live across the project. The Files Filter, Flags, and Paths fields scope the search using ripgrep globs (e.g. `*.lua`) and flags (e.g. `--fixed-strings`). The keys below use the local leader (`;`):
+
+- `;r` - Replace all matches
+- `;s` - Sync all changes back to the files
+- `;l` - Sync the current line only
+- `;x` - Open the match under the cursor in a buffer
+- `;o` / `;t` - Open location / toggle preview
+- `q` or `;c` - Close the buffer
 
 ### Clearing search
 
