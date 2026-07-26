@@ -12,6 +12,19 @@ return {
     { "<Leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Find git commits" },
     { "<Leader>fs", "<cmd>Telescope git_status<cr>", desc = "Find git status" },
     { "<Leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Find word under cursor" },
+    {
+      "<Leader>fw",
+      function()
+        local save = vim.fn.getreg("v")
+        local save_type = vim.fn.getregtype("v")
+        vim.cmd('noautocmd normal! "vy')
+        local selection = vim.fn.getreg("v")
+        vim.fn.setreg("v", save, save_type)
+        require("telescope.builtin").grep_string({ search = selection })
+      end,
+      mode = "v",
+      desc = "Find visual selection",
+    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
