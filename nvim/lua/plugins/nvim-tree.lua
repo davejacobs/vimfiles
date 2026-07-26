@@ -48,8 +48,8 @@ return {
         change_dir = {
           -- Change the working directory when changing directories in the tree
           enable = true,
-          -- Use `:cd` instead of `:lcd` when changing directories
-          global = false
+          -- Use :cd (updates vim.loop.cwd so Telescope picks it up)
+          global = true
         },
         open_file = {
           quit_on_open = false,
