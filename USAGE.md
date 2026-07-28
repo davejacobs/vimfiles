@@ -200,6 +200,17 @@ the log level to `debug`.
 
 **Note**: Completion is disabled in Markdown files
 
+## Clojure (Conjure and nvim-paredit)
+
+Clojure gets treesitter highlighting, comment control, clojure-lsp, structural
+editing (nvim-paredit), and REPL eval (Conjure). All keybindings are the plugins'
+own defaults, so they aren't repeated here — with one customization:
+
+- `;k` - Conjure symbol docs (moved off the default `K` so `K` stays LSP hover)
+
+nvim-paredit and Conjure both use the local leader (`;`); see `:help nvim-paredit`
+and `:ConjureSchool` for their default mappings.
+
 ## Code navigation
 
 ### aerial.nvim (symbol outline)
