@@ -4,7 +4,7 @@ return {
   priority = 1000,
   config = function()
     require('nordic').load({
-      transparent = { bg = vim.env.MACNEOVIM ~= '1' }
+      transparent = { bg = vim.env.NVIM_GUI ~= '1' }
     })
   end
 }
