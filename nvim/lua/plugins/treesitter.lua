@@ -17,6 +17,10 @@ return {
     register_soar()
     vim.api.nvim_create_autocmd("User", { pattern = "TSUpdate", callback = register_soar })
 
+    -- .sdl files are Clojure-shaped, so highlight them with the clojure parser
+    -- without pulling in clojure-lsp (whose filetypes list deliberately omits sdl).
+    vim.treesitter.language.register("clojure", "sdl")
+
     require("nvim-treesitter").install {
       "bash",
       "c",
@@ -53,6 +57,7 @@ return {
         "purescript",
         "python",
         "ruby",
+        "sdl",
         "sh",
         "soar",
         "typescript",
