@@ -1,6 +1,6 @@
 # Vimfiles
 
-My Neovim configuration, using the Nordic theme. Leader is `,`, escape is `kj`,
+My Neovim configuration, using the Nordic and South themes. Leader is `,`, escape is `kj`,
 and formatting is manual rather than on-save.
 
 ![Screenshot](images/Screenshot.png)
