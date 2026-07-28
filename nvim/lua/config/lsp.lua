@@ -83,6 +83,46 @@ vim.lsp.enable({
   'clangd'
 })
 
+-- Native LSP dropped nvim-lspconfig's :LspRestart and :LspStop, so provide our
+-- own. With no args they act on the current buffer's clients; with names, on any
+-- matching client.
+local function matched_clients(filter)
+  if #filter == 0 then
+    return vim.lsp.get_clients({ bufnr = 0 })
+  end
+  return vim.tbl_filter(function(client)
+    return vim.tbl_contains(filter, client.name)
+  end, vim.lsp.get_clients())
+end
+
+local function complete_client_names()
+  return vim.iter(vim.lsp.get_clients()):map(function(c) return c.name end):totable()
+end
+
+vim.api.nvim_create_user_command('LspRestart', function(info)
+  for _, client in ipairs(matched_clients(info.fargs)) do
+    local bufs = vim.lsp.get_buffers_by_client_id(client.id)
+    local config = client.config
+    client:stop()
+    local timer = assert(vim.uv.new_timer())
+    timer:start(200, 100, vim.schedule_wrap(function()
+      if client:is_stopped() then
+        timer:stop()
+        timer:close()
+        for _, buf in ipairs(bufs) do
+          vim.lsp.start(config, { bufnr = buf })
+        end
+      end
+    end))
+  end
+end, { nargs = '*', complete = complete_client_names })
+
+vim.api.nvim_create_user_command('LspStop', function(info)
+  for _, client in ipairs(matched_clients(info.fargs)) do
+    client:stop()
+  end
+end, { nargs = '*', complete = complete_client_names })
+
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 vim.diagnostic.config({
   virtual_text = true,
