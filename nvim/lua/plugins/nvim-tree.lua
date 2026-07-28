@@ -19,8 +19,9 @@ return {
       vim.keymap.set("n", "s", api.node.open.horizontal, opts "Open: Horizontal Split")
       vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
       vim.keymap.set("n", "go", api.node.run.system, opts "Run System")
-      vim.keymap.set("n", "I", api.tree.toggle_custom_filter, opts "Toggle Ignored Files")
+      vim.keymap.set("n", "I", api.tree.toggle_gitignore_filter, opts "Toggle Git Ignored")
       vim.keymap.set("n", "gi", api.tree.toggle_gitignore_filter, opts "Toggle Git Ignored")
+      vim.keymap.set("n", "gI", api.tree.toggle_custom_filter, opts "Toggle Custom Filter (.git)")
     end
 
     vim.api.nvim_create_autocmd("VimEnter", {
@@ -53,7 +54,10 @@ return {
         },
         open_file = {
           quit_on_open = false,
-          resize_window = false
+          resize_window = false,
+          window_picker = {
+            enable = false
+          }
         }
       },
       view = {
@@ -77,27 +81,11 @@ return {
       },
       filters = {
         dotfiles = false,
+        -- Everything else lives in ~/.gitignore and is hidden via the git_ignored
+        -- filter (I / gi). Git never reports its own repo dir as ignored, so .git
+        -- stays here as a special case, toggled with gI.
         custom = {
-          '\\.DS_Store$',
-          '^tmp$',
-          '^log$',
-          '^logs$',
-          '^.git$',
-          '^\\.gems$',
-          '^target$',
-          '^build$',
-          '^.mvn$',
-          '^.settings$',
-          '^.classpath$',
-          '^.project$',
-          '^.idea$',
-          '^node_modules$',
-          '^__pycache__$',
-          '^\\.venv$',
-          'Icon.*',
-          'ruby-lsp',
-          '\\.classpath.*',
-          '^\\.claude$'
+          '^\\.git$'
         }
       }
     })
