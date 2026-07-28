@@ -21,8 +21,7 @@ require("lazy").setup("plugins", {
     colorscheme = { "nord" },
   },
   checker = {
-    enabled = true,
-    notify = false,
+    enabled = false,
   },
   change_detection = {
     notify = false,
