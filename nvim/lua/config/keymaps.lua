@@ -12,6 +12,10 @@ end, { desc = 'Format entire file' })
 -- Get the convenience of 'o' in insert mode
 vim.keymap.set('i', '<S-CR>', '<Esc>o', { desc = 'New line below in insert mode' })
 
+-- Insert a blank line below/above and stay in normal mode (doesn't touch registers)
+vim.keymap.set('n', '<Leader>o', ':put _<CR>', { desc = 'Blank line below' })
+vim.keymap.set('n', '<Leader>O', ':put! _<CR>', { desc = 'Blank line above' })
+
 -- Sudo - even if you didn't open the file as root
 vim.keymap.set('c', 'w!!', '%!sudo tee > /dev/null %', { desc = 'Save with sudo' })
 
