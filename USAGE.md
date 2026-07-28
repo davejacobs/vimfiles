@@ -299,7 +299,7 @@ and `:ConjureSchool` for their default mappings.
 - **Python**: ruff_format, ruff_fix
 - **Ruby**: rubocop
 - **Shell**: shfmt
-- **Haskell**: fourmolu
+- **Haskell**: stylish-haskell
 - **HTML/CSS/SCSS/SASS**: prettier
 - **JSON/YAML**: prettier
 
@@ -311,7 +311,7 @@ npm install -g prettier
 pip install mdformat ruff
 gem install rubocop
 brew install shfmt
-cabal install fourmolu
+stack install stylish-haskell
 
 # Linters
 npm install -g eslint jsonlint markdownlint-cli
