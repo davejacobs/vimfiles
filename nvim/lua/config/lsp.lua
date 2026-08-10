@@ -105,13 +105,20 @@ vim.api.nvim_create_user_command('LspRestart', function(info)
     local config = client.config
     client:stop()
     local timer = assert(vim.uv.new_timer())
+    local restarted = false
     timer:start(200, 100, vim.schedule_wrap(function()
-      if client:is_stopped() then
-        timer:stop()
-        timer:close()
-        for _, buf in ipairs(bufs) do
-          vim.lsp.start(config, { bufnr = buf })
-        end
+      -- This is a repeating timer and the callback is schedule-wrapped, so several
+      -- ticks can be queued before the first one runs. Guard so the close and the
+      -- restart happen exactly once — otherwise the second callback closes an
+      -- already-closing handle ("handle is already closing").
+      if restarted or not client:is_stopped() then
+        return
+      end
+      restarted = true
+      timer:stop()
+      timer:close()
+      for _, buf in ipairs(bufs) do
+        vim.lsp.start(config, { bufnr = buf })
       end
     end))
   end
