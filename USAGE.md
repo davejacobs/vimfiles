@@ -72,6 +72,7 @@ This guide covers some of the highlights of this configuration.
 - `<Leader>fc` - Find git commits
 - `<Leader>fs` - Find git status
 - `<Leader>fw` - Find word under cursor
+- `<Leader>fd` - Find diagnostics (browse all LSP errors/warnings)
 
 ## Search and replace
 
@@ -159,6 +160,24 @@ Fill in the Search and Replace fields to preview matches live across the project
 - `[d` - Go to previous diagnostic
 - `]d` - Go to next diagnostic
 - `<Leader>d` - Open diagnostic float (show error details)
+
+#### trouble.nvim (diagnostics panel)
+
+A persistent diagnostics list, like VSCode's Problems panel: navigate items and jump straight to
+them while the panel stays open.
+
+- `<Leader>fd` - Toggle the workspace diagnostics panel (open/close)
+- `<Leader>xd` - Toggle diagnostics for the current buffer only
+- `<Leader>xl` - Toggle the location list in Trouble
+- `<Leader>xq` - Toggle the quickfix list in Trouble
+- `]x` / `[x` - Jump to the next / previous Trouble item from anywhere
+
+**Within the Trouble window:**
+
+- `j` / `k` - Move through items; the source buffer previews as you go
+- `<CR>` - Jump to the item under the cursor, keeping the panel open
+- `<Esc>` - Close the panel
+- `?` - Show all available Trouble keymaps
 
 ### Diagnosing LSP state
 
