@@ -27,7 +27,7 @@ gem install ruby-lsp
 npm install -g pyright                                # Python
 npm install -g typescript-language-server typescript  # TypeScript & JavaScript
 npm install -g vscode-langservers-extracted           # HTML, CSS, JSON
-npm install -g yaml-language-server
+npm install -g purescript-language-server              # PureScript
 ```
 
 ## Install
