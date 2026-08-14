@@ -130,6 +130,23 @@ vim.api.nvim_create_user_command('LspStop', function(info)
   end
 end, { nargs = '*', complete = complete_client_names })
 
+vim.api.nvim_create_user_command('LspStatus', function()
+  local clients = vim.lsp.get_clients({ bufnr = 0 })
+  if #clients == 0 then
+    vim.notify('No LSP clients attached to this buffer', vim.log.levels.WARN)
+    return
+  end
+  local counts = vim.diagnostic.count(0)
+  local errors = counts[vim.diagnostic.severity.ERROR] or 0
+  local warns = counts[vim.diagnostic.severity.WARN] or 0
+  local lines = { ('Diagnostics: %d error(s), %d warning(s)'):format(errors, warns) }
+  for _, client in ipairs(clients) do
+    table.insert(lines, ('  %s (id %d) — root: %s'):format(
+      client.name, client.id, client.root_dir or 'n/a'))
+  end
+  vim.notify(table.concat(lines, '\n'), vim.log.levels.INFO)
+end, { desc = 'Summarize LSP clients and diagnostics for the current buffer' })
+
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 vim.diagnostic.config({
   virtual_text = true,
