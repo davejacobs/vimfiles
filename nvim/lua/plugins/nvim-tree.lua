@@ -22,6 +22,7 @@ return {
       vim.keymap.set("n", "I", api.tree.toggle_gitignore_filter, opts "Toggle Git Ignored")
       vim.keymap.set("n", "gi", api.tree.toggle_gitignore_filter, opts "Toggle Git Ignored")
       vim.keymap.set("n", "gI", api.tree.toggle_custom_filter, opts "Toggle Custom Filter (.git)")
+      vim.keymap.set("n", "gh", api.tree.toggle_hidden_filter, opts "Toggle Dotfiles")
     end
 
     vim.api.nvim_create_autocmd("VimEnter", {
@@ -80,12 +81,15 @@ return {
         ignore = true
       },
       filters = {
-        dotfiles = false,
-        -- Everything else lives in ~/.gitignore and is hidden via the git_ignored
-        -- filter (I / gi). Git never reports its own repo dir as ignored, so .git
-        -- stays here as a special case, toggled with gI.
+        dotfiles = true,
+        -- Project artifacts live in ~/.gitignore and are hidden via the git_ignored
+        -- filter (I / gi). The entries below are hidden everywhere, git repo or not,
+        -- toggled independently with gI: .git (git never reports its own repo dir as
+        -- ignored) and the OS-level cruft Finder scatters into non-repo directories.
         custom = {
-          '^\\.git$'
+          '^\\.git$',
+          '\\.DS_Store$',
+          '^Icon\r$'
         }
       }
     })
