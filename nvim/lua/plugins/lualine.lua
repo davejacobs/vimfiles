@@ -4,6 +4,16 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
+    local function lsp_clients()
+      local names = vim.iter(vim.lsp.get_clients({ bufnr = 0 }))
+        :map(function(c) return c.name end)
+        :totable()
+      if #names == 0 then
+        return ''
+      end
+      return '󰒋 ' .. table.concat(names, ', ')
+    end
+
     require('lualine').setup({
       options = {
         theme = 'auto',
@@ -26,7 +36,7 @@ return {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {'filename'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_x = {lsp_clients, 'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
       },
